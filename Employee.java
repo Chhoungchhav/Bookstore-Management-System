@@ -58,13 +58,6 @@ public class Employee {
         return salary;
     }
 
-    public void getEmployeeDetail(){
-        System.out.println("EmployeeID: " + employeeID);
-        System.out.println("Name: "+ name);
-        System.out.println("Position: " + position);
-        System.out.println("Email Address: " + emailAddress);
-        System.out.println("Start Date: " + startDate);
-    }
 
     
 }
