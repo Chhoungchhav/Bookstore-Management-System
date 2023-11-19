@@ -5,7 +5,7 @@ public class Book {
     private String title;
     private double saleprice, importprice;
     private Date importDate;
-    public Book(int bookID, String title, double saleprice, double importprice, int instockbook, Date importDate){
+    Book(int bookID, String title, double saleprice, double importprice, int instockbook, Date importDate){
         this.bookID = bookID;
         this.title = title;
         this.saleprice = saleprice;
@@ -14,13 +14,13 @@ public class Book {
         this.instockbook = instockbook;
     }
     
-    public static int getBookID(int bookID) {
+    public int getBookID(int bookID) {
         return bookID;
     }
-    public static int getStock(int stock){
+    public int getStock(int stock){
         return instockbook;
     }
-    public static double getPrice(int price){
+    public double getPrice(int price){
         return saleprice;
     }
 
