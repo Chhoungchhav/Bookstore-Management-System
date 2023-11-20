@@ -31,7 +31,7 @@ public class Employee {
         else if (this.position.equals("seller")){
             this.maxSalary = 200;
         }
-        else if (this.position.equals("supplier")){
+        else if (this.position.equals("stocker")){
             this.maxSalary = 180;
         }
     }
