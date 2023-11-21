@@ -12,8 +12,6 @@ public class Bookstore {
     public void checkTodaySale{
     
     }
-    public void checkRegularCustomer{
-
-    }
+    
     
 }
