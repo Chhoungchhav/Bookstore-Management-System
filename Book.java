@@ -16,9 +16,6 @@ public class Book {
     public int getBookID(int bookID) {
         return bookID;
     }
-    public int getStock(int stock){
-        return instockbook;
-    }
     public double getPrice(int bookID){
         return salePrice;
     }
