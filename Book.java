@@ -1,17 +1,16 @@
 package Bookstore_Management;
 
 public class Book {
-    private int bookID, instockbook;
+    private int bookID, inStockBook;
     private String title;
-    private double saleprice, importprice;
-    private Date importDate;
-    Book(int bookID, String title, double saleprice, double importprice, int instockbook, Date importDate){
+    private double salePrice, importPrice;
+    private String importDate;
+    Book(int bookID, String title, double salePrice, double importPrice, String importDate){
         this.bookID = bookID;
         this.title = title;
-        this.saleprice = saleprice;
+        this.salePrice = salePrice;
+        this.importPrice = importPrice;
         this.importDate = importDate;
-        this.importprice = importprice;
-        this.instockbook = instockbook;
     }
     
     public int getBookID(int bookID) {
@@ -20,8 +19,8 @@ public class Book {
     public int getStock(int stock){
         return instockbook;
     }
-    public double getPrice(int price){
-        return saleprice;
+    public double getPrice(int bookID){
+        return salePrice;
     }
 
 
