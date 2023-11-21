@@ -24,5 +24,11 @@ public class Book {
         this.importDate = Supply.getSupplyDate();
         this.instockbook = Supply.getStock();
     }
+    public void checkPopularBook{
+
+    }
+    public void checkBookStock{
+
+    }
 
 }
