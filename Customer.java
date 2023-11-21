@@ -9,7 +9,13 @@ public class Customer {
     public int getCustomerID(int customerID){
         return customerID;
     }
-    public String getCustomerName(int name){
+    public String getCustomerName(String name){
         return name;
+    }
+    public String getCustomerPhone(String phoneNumber){
+        return phoneNumber;
+    }
+    public void checkRegularCustomer{
+
     }
 }
