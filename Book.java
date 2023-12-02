@@ -1,11 +1,34 @@
 package Bookstore_Management;
 
 public class Book {
-    private int bookId, publicationYear; 
-    private String title, isbn, genre, authorName;
+    private int bookID, inStockBook;
+    private String title;
     private double salePrice, importPrice;
-
-    public void setBookTitle(){
+    private String importDate;
+    Book(int bookID, String title, double salePrice, double importPrice, String importDate){
+        this.bookID = bookID;
+        this.title = title;
+        this.salePrice = salePrice;
+        this.importPrice = importPrice;
+        this.importDate = importDate;
+    }
+    
+    public int getBookID(int bookID) {
+        return bookID;
+    }
+    public double getPrice(int bookID){
+        return salePrice;
+    }
+    if (this.bookID == (Supply.getSupplyBookID()){
+        this.importprice = Supply.getImportPrice();
+        this.importDate = Supply.getSupplyDate();
+        this.instockbook = Supply.getStock();
+    }
+    public void checkPopularBook{
 
     }
+    public void checkBookStock{
+
+    }
+
 }
