@@ -16,6 +16,7 @@ public class Book {
     public int getBookID(int bookID) {
         return bookID;
     }
+    
     public double getPrice(int bookID){
         return salePrice;
     }

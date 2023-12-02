@@ -9,10 +9,9 @@ public class Employee {
 
     
 
-    Employee(int employeeID, String name, String position, String emailAddress, String startDate){
+    public Employee(int employeeID, String name, String emailAddress, String startDate){
         this.employeeID = employeeID;
         this.name = name;
-        this.position = position;
         this.emailAddress = emailAddress;
         this.startDate = startDate;
 
@@ -30,9 +29,6 @@ public class Employee {
         }
         else if (this.position.equals("seller")){
             this.maxSalary = 200;
-        }
-        else if (this.position.equals("stocker")){
-            this.maxSalary = 180;
         }
     }
 
@@ -52,6 +48,18 @@ public class Employee {
         else {
             salary = maxSalary * 0.7;
         }
+    }
+
+    public int getEmployeeID(){
+        return employeeID;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getEmail(){
+        return emailAddress;
     }
 
     public double getSalary(){
