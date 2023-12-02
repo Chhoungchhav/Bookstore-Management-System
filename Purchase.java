@@ -1,6 +1,6 @@
 package Bookstore_Management;
 
-public class Purchase {
+abstract class Purchase {
     private int purchaseID, bookID, customerID, employeeID, quantity;
     private String purchaseDate;
     private double subTotal, totalPrice;
@@ -14,7 +14,5 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public void setTotalPrice(){
-
-    }
+    abstract void makePurchase();
 }
