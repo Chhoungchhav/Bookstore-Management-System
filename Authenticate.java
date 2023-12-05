@@ -53,8 +53,6 @@ public class Authenticate {
         System.out.println("Input employee ID: ");
         tmpID = sc.nextInt();
         sc.nextLine();
-        System.out.println("Input name: ");
-        tmpName = sc.nextLine();
         System.out.println("Input email address: ");
         tmpEmail = sc.nextLine();
         System.out.println("Input start date: ");
@@ -63,10 +61,10 @@ public class Authenticate {
         Register.registerUser(tmpUserName, tmpPassword, tmpPosition);
 
         if (tmpPosition.equals("manager")){
-            Register.registerManager(tmpID, tmpName, tmpEmail, tmpStartDate);
+            Register.registerManager(tmpID, tmpUserName, tmpEmail, tmpStartDate);
         }
         else if (tmpPosition.equals("seller")){
-            Register.registerSeller(tmpID, tmpName, tmpEmail, tmpStartDate);
+            Register.registerSeller(tmpID, tmpUserName, tmpEmail, tmpStartDate);
         }
     }
 
