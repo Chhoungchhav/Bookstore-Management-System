@@ -9,7 +9,7 @@ public class Employee {
 
     
 
-    public Employee(int employeeID, String name, String emailAddress, String startDate, double salary){
+    public Employee(int employeeID, String name, String emailAddress, String startDate){
         this.employeeID = employeeID;
         this.name = name;
         this.emailAddress = emailAddress;
@@ -17,7 +17,7 @@ public class Employee {
 
         this.currentYear = Year.now().getValue();
         
-        String dateParts[] = this.startDate.split("/");
+        String dateParts[] = this.startDate.split("-");
         year = dateParts[2];
 
         startYear = Integer.parseInt(year);

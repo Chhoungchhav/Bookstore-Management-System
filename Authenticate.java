@@ -32,20 +32,42 @@ public class Authenticate {
     }
 
     private void registerUser() {
-        String tmpName;
+        String tmpUserName;
         String tmpPassword;
-        String position;
+        String tmpPosition;
+        int tmpID;
+        String tmpName, tmpEmail, tmpStartDate;
 
         do {
-            System.out.println("Input name: ");
-            tmpName = sc.nextLine();
-        } while (LogIn.VerifyUserName(tmpName));
+            System.out.println("Input username: ");
+            tmpUserName = sc.nextLine();
+        } while (LogIn.VerifyUserName(tmpUserName));
 
         System.out.println("Input password: ");
         tmpPassword = sc.nextLine();
         System.out.println("Input position: ");
-        position = sc.nextLine();
-        Register.registerUser(tmpName, tmpPassword, position);
+        tmpPosition = sc.nextLine();
+
+        
+
+        System.out.println("Input employee ID: ");
+        tmpID = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Input name: ");
+        tmpName = sc.nextLine();
+        System.out.println("Input email address: ");
+        tmpEmail = sc.nextLine();
+        System.out.println("Input start date: ");
+        tmpStartDate = sc.nextLine();
+
+        Register.registerUser(tmpUserName, tmpPassword, tmpPosition);
+
+        if (tmpPosition.equals("manager")){
+            Register.registerManager(tmpID, tmpName, tmpEmail, tmpStartDate);
+        }
+        else if (tmpPosition.equals("seller")){
+            Register.registerSeller(tmpID, tmpName, tmpEmail, tmpStartDate);
+        }
     }
 
     private void loginUser() {

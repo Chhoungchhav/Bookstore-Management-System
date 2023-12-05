@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Manager extends Employee {
     
-    public Manager(int employeeID, String name, String emailAddress, String startDate, double salary){
-        super(employeeID, name, emailAddress, startDate, salary);
+    public Manager(int employeeID, String name, String emailAddress, String startDate){
+        super(employeeID, name, emailAddress, startDate);
     }
     public void changeSellerSalary(List<Seller> sellers, double newSalary, int number) {
         if (!sellers.isEmpty()) {
@@ -13,6 +13,12 @@ public class Manager extends Employee {
         }
     }
 
+    @Override
+    public String toString() {
+        String tmp = "User is created";
+
+        return tmp;
+    }
     
     
 }
