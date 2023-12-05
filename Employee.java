@@ -4,7 +4,7 @@ import java.time.Year;
 
 public class Employee {
     private int employeeID, startYear, workYear, currentYear;
-    private String name, emailAddress, position, startDate, year;
+    private String name, emailAddress, password, startDate, year;
     private double maxSalary, salary;
 
     
@@ -57,7 +57,6 @@ public class Employee {
     public double getSalary(){
         return maxSalary;
     }
-
 
     
 }
