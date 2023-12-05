@@ -9,9 +9,10 @@ public class Employee {
 
     
 
-    public Employee(int employeeID, String name, String emailAddress, String startDate){
+    public Employee(int employeeID, String name, String password, String emailAddress, String startDate){
         this.employeeID = employeeID;
         this.name = name;
+        this.password = password;
         this.emailAddress = emailAddress;
         this.startDate = startDate;
 
@@ -58,5 +59,14 @@ public class Employee {
         return maxSalary;
     }
 
-    
+    @Override
+    public boolean equals(Object obj) {
+        Employee e1 = (Employee) obj;
+       
+        if( this.name.equals(e1.name) && this.password.equals(e1.password) )
+        {
+            return true;
+        }
+        return false;
+    }
 }
