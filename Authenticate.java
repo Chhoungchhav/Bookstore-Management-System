@@ -55,7 +55,7 @@ public class Authenticate {
         sc.nextLine();
         System.out.println("Input email address: ");
         tmpEmail = sc.nextLine();
-        System.out.println("Input start date: ");
+        System.out.println("Input start date (DD-MM-YYYY): ");
         tmpStartDate = sc.nextLine();
 
         Register.registerUser(tmpUserName, tmpPassword, tmpPosition);
