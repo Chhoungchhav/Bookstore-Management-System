@@ -1,2 +1,8 @@
 Jack/123/manager
 Flora/12345/seller
+Emily/em123/seller
+Mike/mk452/manager
+Mikey/jkl5214/manager
+Jennifer/kjmn5214/seller
+Ketty/5241/seller
+Joe/15243/seller
