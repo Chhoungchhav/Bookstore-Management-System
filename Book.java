@@ -19,11 +19,6 @@ public class Book {
     public double getPrice(int bookID){
         return salePrice;
     }
-    if (this.bookID == (Supply.getSupplyBookID()){
-        this.importprice = Supply.getImportPrice();
-        this.importDate = Supply.getSupplyDate();
-        this.instockbook = Supply.getStock();
-    }
     public void checkPopularBook{
 
     }
