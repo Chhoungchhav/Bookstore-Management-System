@@ -9,7 +9,7 @@ public class Employee {
 
     
 
-    public Employee(int employeeID, String name, String emailAddress, String startDate){
+    public Employee(int employeeID, String name, String emailAddress, String startDate, double salary){
         this.employeeID = employeeID;
         this.name = name;
         this.emailAddress = emailAddress;
@@ -23,30 +23,22 @@ public class Employee {
         startYear = Integer.parseInt(year);
 
         this.workYear = currentYear - startYear;
-
-        if (this.position.equals("manager")) {
-            this.maxSalary = 400;
-        }
-        else if (this.position.equals("seller")){
-            this.maxSalary = 200;
-        }
     }
-
-    public void setSalary(){
+    public void setSalary(double salary){
         if (workYear >= 10){
-            salary = maxSalary;
+            this.maxSalary = salary*1.75;
         }
 
         else if (workYear >= 5){
-            salary = maxSalary * 0.9;
+            this.maxSalary = salary*1.5;
         }
 
         else if (workYear >= 3){
-            salary = maxSalary * 0.8;
+            this.maxSalary = salary*1.25;
         }
 
         else {
-            salary = maxSalary * 0.7;
+            this.maxSalary = salary;
         }
     }
 
@@ -63,7 +55,7 @@ public class Employee {
     }
 
     public double getSalary(){
-        return salary;
+        return maxSalary;
     }
 
 
