@@ -1,4 +1,4 @@
-package Bookstore_Management;
+// package Bookstore_Management;
 
 import java.time.Year;
 
@@ -63,6 +63,11 @@ public class Employee {
 
     public double getSalary(){
         return maxSalary;
+    }
+    @Override
+    public String toString() {
+        String s = "EmployeeID: "+ this.employeeID+", name: " + this.name ;
+        return s;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package Bookstore_Management;
+// package Bookstore_Management;
 
 public  class Seller extends Employee{
     final String position = "seller";
@@ -8,7 +8,7 @@ public  class Seller extends Employee{
     
     @Override
     public String toString() {
-        String tmp = super.toString() + this.position;
+        String tmp = super.toString() + ", position: " + this.position;
 
         return tmp;
     }
