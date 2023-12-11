@@ -57,7 +57,7 @@ public class LogIn {
 
         if(exist==true)
         {
-            System.out.println("User exist please pick different name");
+            System.out.println("Employee ID exist");
             return true;
         }
 
