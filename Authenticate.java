@@ -32,56 +32,49 @@ public class Authenticate {
     }
 
     private void registerUser() {
-        String tmpUserName;
         String tmpPassword;
         String tmpPosition;
         int tmpID;
         String tmpName, tmpEmail, tmpStartDate;
 
         do {
-            System.out.println("Input username: ");
-            tmpUserName = sc.nextLine();
-        } while (LogIn.VerifyUserName(tmpUserName));
+            System.out.println("Input employee ID: ");
+            tmpID = sc.nextInt();
+        } while (LogIn.VerifyEmployeeID(tmpID));
+        sc.nextLine();
+
+        System.out.println("Input name: ");
+        tmpName = sc.nextLine();
 
         System.out.println("Input password: ");
         tmpPassword = sc.nextLine();
+
         System.out.println("Input position: ");
         tmpPosition = sc.nextLine();
-
-        
-
-        System.out.println("Input employee ID: ");
-        tmpID = sc.nextInt();
-        sc.nextLine();
-        System.out.println("Input name: ");
-        tmpName = sc.nextLine();
         System.out.println("Input email address: ");
         tmpEmail = sc.nextLine();
-        System.out.println("Input start date: ");
+        System.out.println("Input start date (DD-MM-YYYY): ");
         tmpStartDate = sc.nextLine();
 
-        Register.registerUser(tmpUserName, tmpPassword, tmpPosition);
 
         if (tmpPosition.equals("manager")){
-            Register.registerManager(tmpID, tmpName, tmpEmail, tmpStartDate);
+            Register.registerManager(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate);
         }
         else if (tmpPosition.equals("seller")){
-            Register.registerSeller(tmpID, tmpName, tmpEmail, tmpStartDate);
+            Register.registerSeller(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate);
         }
     }
 
     private void loginUser() {
-        String tmpName;
+        int tmpID;
         String tmpPassword;
-        String position;
 
-        System.out.println("Input name: ");
-        tmpName = sc.nextLine();
+        System.out.println("Input employee ID: ");
+        tmpID = sc.nextInt();
+        sc.nextLine();
         System.out.println("Input password: ");
         tmpPassword = sc.nextLine();
-        User tmpuser = new User(tmpName, tmpPassword);
+        Employee tmpuser = new Employee(tmpID, tmpPassword);
         LogIn.loginUser(tmpuser);
-        position = LogIn.getPosition(tmpuser);
-        System.out.println(position);
     }
 }

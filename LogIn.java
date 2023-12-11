@@ -1,17 +1,20 @@
 package Bookstore_Management;
 
 import java.util.ArrayList;
+
+import User.User;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class LogIn {
 
-    static ArrayList<User> userList = new ArrayList<User>(); 
+    static ArrayList<Employee> employeeList = new ArrayList<Employee>(); 
     
-    public static void getUserList()
+    public static void getEmployeeList()
     {
-        String filePath = "Bookstore_Management/UserInfo.txt";
+        String filePath = "Bookstore_Management/EmployeeInfo.txt";
         
         try {
             // Create a FileReader
@@ -24,8 +27,8 @@ public class LogIn {
                 // Process the line as needed
                 //System.out.println(line);
                 String[] parts = line.split("/");
-                User tmp = new User(parts[0], parts[1], parts[2]);
-                userList.add(tmp);
+                Employee tmp = new Employee(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+                employeeList.add(tmp);
             }
 
             // Close the BufferedReader
@@ -36,16 +39,16 @@ public class LogIn {
         }
     }
     
-    public static boolean VerifyUserName(String name)
+    public static boolean VerifyEmployeeID(int id)
     {
        
-        getUserList();        
+        getEmployeeList();        
 
         boolean exist = false;
-        for(User i : userList)
+        for(Employee i : employeeList)
         {
             // System.out.println(i.getName());
-            if(i.getName().equals(name))
+            if(i.getEmployeeID() == id)
             {
                 exist = true;
             }
@@ -61,12 +64,12 @@ public class LogIn {
         return false;
     }
 
-    public static void loginUser(User loginUser){
+    public static void loginUser(Employee loginUser){
         
-        getUserList();   
+        getEmployeeList();   
 
         boolean exist = false;
-        for(User i : userList)
+        for(Employee i : employeeList)
         {
             if(i.equals(loginUser))
             {
@@ -84,15 +87,4 @@ public class LogIn {
         }
     }
 
-    public static String getPosition(User loginUser) {
-        getUserList();
-
-        for (User i : userList) {
-            if (i.equals(loginUser)) {
-                return i.getPosition();
-            }
-        }
-
-        return null; // Return null if no matching user is found
-    }
 }

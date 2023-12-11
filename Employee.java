@@ -4,14 +4,15 @@ import java.time.Year;
 
 public class Employee {
     private int employeeID, startYear, workYear, currentYear;
-    private String name, emailAddress, position, startDate, year;
+    private String name, emailAddress, password, startDate, year;
     private double maxSalary, salary;
 
     
 
-    public Employee(int employeeID, String name, String emailAddress, String startDate){
+    public Employee(int employeeID, String name, String password, String emailAddress, String startDate){
         this.employeeID = employeeID;
         this.name = name;
+        this.password = password;
         this.emailAddress = emailAddress;
         this.startDate = startDate;
 
@@ -24,6 +25,12 @@ public class Employee {
 
         this.workYear = currentYear - startYear;
     }
+
+    public Employee(int employeeID, String password){
+        this.employeeID = employeeID;
+        this.password = password;
+    }
+
     public void setSalary(double salary){
         if (workYear >= 10){
             this.maxSalary = salary*1.75;
@@ -58,6 +65,14 @@ public class Employee {
         return maxSalary;
     }
 
-
-    
+    @Override
+    public boolean equals(Object obj) {
+        Employee e1 = (Employee) obj;
+       
+        if( this.employeeID == e1.employeeID && this.password.equals(e1.password) )
+        {
+            return true;
+        }
+        return false;
+    }
 }
