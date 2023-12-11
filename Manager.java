@@ -1,4 +1,4 @@
-package Bookstore_Management;
+// package Bookstore_Management;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class Manager extends Employee {
 
     @Override
     public String toString() {
-        String tmp = super.toString() + this.position;
+        String tmp = super.toString() + ", position: " + this.position;
 
         return tmp;
     }
