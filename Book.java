@@ -25,5 +25,11 @@ public class Book {
     public void checkBookStock{
 
     }
+    @Override
+    public String toString() {
+        String b = "BookID: "+ this.bookID+", title: " + this.title ;
+        return b;
+    }
+
 
 }
