@@ -6,3 +6,4 @@ Mikey/jkl5214/manager
 Jennifer/kjmn5214/seller
 Ketty/5241/seller
 Joe/15243/seller
+John Doe/12345/manager

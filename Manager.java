@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Manager extends Employee {
     final String position = "manager";
-    public Manager(int employeeID, String name, String emailAddress, String startDate){
-        super(employeeID, name, emailAddress, startDate);
+    public Manager(int employeeID, String name,String password, String emailAddress, String startDate){
+        super(employeeID, name, password, emailAddress, startDate);
     }
     public void changeSellerSalary(List<Seller> sellers, double newSalary, int number) {
         if (!sellers.isEmpty()) {
