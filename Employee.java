@@ -25,6 +25,12 @@ public class Employee {
 
         this.workYear = currentYear - startYear;
     }
+
+    public Employee(int employeeID, String password){
+        this.employeeID = employeeID;
+        this.password = password;
+    }
+
     public void setSalary(double salary){
         if (workYear >= 10){
             this.maxSalary = salary*1.75;
@@ -63,7 +69,7 @@ public class Employee {
     public boolean equals(Object obj) {
         Employee e1 = (Employee) obj;
        
-        if( this.name.equals(e1.name) && this.password.equals(e1.password) )
+        if( this.employeeID == e1.employeeID && this.password.equals(e1.password) )
         {
             return true;
         }
