@@ -1,8 +1,7 @@
-// package Bookstore_Management;
 
 import java.util.ArrayList;
 
-// import User.User;
+import User.User;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -86,5 +85,22 @@ public class LogIn {
             System.out.println("Incorrect username or password");
         }
     }
+
+    /* 
+    public static String getPosition(Employee loginUser) {
+        getEmployeeList();
+
+        String position = null; // Initialize with a default value
+
+        for (Employee i : employeeList) {
+            if (i.equals(loginUser)) {
+                position = i.getPosition();
+                break; // Break out of the loop once a matching user is found
+            }
+        }
+
+        return position; // Returns null if no matching user is found
+    }
+    */
 
 }

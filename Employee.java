@@ -1,4 +1,4 @@
-// package Bookstore_Management;
+
 
 import java.time.Year;
 
@@ -31,21 +31,21 @@ public class Employee {
         this.password = password;
     }
 
-    public void setSalary(double salary){
+    public double getBonusMulti(){
         if (workYear >= 10){
-            this.maxSalary = salary*1.75;
+            return 1.75;
         }
 
         else if (workYear >= 5){
-            this.maxSalary = salary*1.5;
+            return 1.5;
         }
 
         else if (workYear >= 3){
-            this.maxSalary = salary*1.25;
+            return 1.25;
         }
 
         else {
-            this.maxSalary = salary;
+            return 1;
         }
     }
 
@@ -61,9 +61,7 @@ public class Employee {
         return emailAddress;
     }
 
-    public double getSalary(){
-        return maxSalary;
-    }
+    
     @Override
     public String toString() {
         String s = "EmployeeID: "+ this.employeeID+", name: " + this.name ;

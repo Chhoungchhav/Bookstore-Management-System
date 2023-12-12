@@ -1,4 +1,4 @@
-// package Bookstore_Management;
+
 
 public  class Seller extends Employee{
     final String position = "seller";
