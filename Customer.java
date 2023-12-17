@@ -15,7 +15,7 @@ public class Customer {
     public String getCustomerPhone(String phoneNumber){
         return phoneNumber;
     }
-    public void checkRegularCustomer{
+    public void checkRegularCustomer(){
 
     }
 }

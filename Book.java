@@ -28,9 +28,9 @@ public class Book {
         return importPrice;
     }
 
-    public void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
+    public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
         Scanner sc = new Scanner(System.in);
-        String filePath = "Bookstore_Management/BookInfo.txt";
+        String filePath = "Bookstore_Management/Book.txt";
 
         String WritingContent = tmpBookID + "/" + tmpTitle + "/" + tmpSalePrice +"/" + tmpImportPrice + "/" + tmpImportDate;
         

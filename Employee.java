@@ -31,7 +31,7 @@ public class Employee {
         this.password = password;
     }
 
-    public double getBonusMulti(){
+    public double getSalary(){
         if (workYear >= 10){
             return 1.75;
         }

@@ -9,7 +9,7 @@ public class Bookstore {
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
-    public void checkTodaySale{
+    public void checkTodaySale(){
     
     }
     

@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Manager extends Employee {
     final String position = "manager";
+    final double salary = 350;
     public Manager(int employeeID, String name,String password, String emailAddress, String startDate){
         super(employeeID, name, password, emailAddress, startDate);
     }
@@ -12,6 +13,12 @@ public class Manager extends Employee {
             sellers.get(number-1).setSalary(newSalary);
         }
     }
+
+    @Override
+    public double getSalary() {
+        return super.getSalary() * this.salary;
+    }
+
 
     @Override
     public String toString() {
