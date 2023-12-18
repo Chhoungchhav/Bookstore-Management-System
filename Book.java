@@ -33,7 +33,7 @@ public class Book {
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
         Scanner sc = new Scanner(System.in);
-        String filePath = "Book.txt";
+        String filePath = "Bookstore_Management/Book.txt";
 
         String WritingContent = tmpBookID + "/" + tmpTitle + "/" + tmpSalePrice +"/" + tmpImportPrice + "/" + tmpImportDate;
         
@@ -67,7 +67,7 @@ public class Book {
     static ArrayList<Book> bookList = new ArrayList<Book>();
 
     public static void getBookList(){
-        String bookPath = "Book.txt";
+        String bookPath = "Bookstore_Management/Book.txt";
         try {
                 // Create a FileReader
                 FileReader fileReader = new FileReader(bookPath);
@@ -110,6 +110,31 @@ public class Book {
         if(exist==true)
         {
             System.out.println("BookID already exist");
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean VerifyBookID2(int id)
+    {
+       
+        getBookList();        
+
+        boolean exist = false;
+        for(Book i : bookList)
+        {
+            // System.out.println(i.getName());
+            if(i.getBookID() == id)
+            {
+                exist = true;
+            }
+          
+        }
+
+        if(exist==false)
+        {
+            System.out.println("BookID doesn't exist");
             return true;
         }
 

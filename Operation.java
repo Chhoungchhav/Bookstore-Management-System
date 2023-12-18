@@ -101,9 +101,11 @@ public class Operation {
         System.out.print("Input sale price: ");
         tempSalePrice = sc.nextDouble();
         sc.nextLine();
+
         System.out.print("Input import price: ");
         tempImportPrice = sc.nextDouble();
         sc.nextLine();
+
         System.out.print("Input import date(DD-MM-YYYY): ");
         tempImportDate = sc.nextLine();
         Book.addBook(tempBookID, tempTitle, tempSalePrice, tempImportPrice, tempImportDate);
@@ -112,20 +114,32 @@ public class Operation {
     private void addPurchase(){
         int tempPurchaseID, tempQuantity, tempCustomerID, tempBookID;
         String tempPurchaseDate;
-        System.out.print("Input PurchaseID: ");
-        tempPurchaseID = sc.nextInt();
+
+        do{
+            System.out.print("Input PurchaseID: ");
+            tempPurchaseID = sc.nextInt();
+        } while(Seller.VerifyPurchaseID(tempPurchaseID));
         sc.nextLine();
-        System.out.print("Input CustomerID: ");
-        tempCustomerID = sc.nextInt();
+
+        do{
+            System.out.print("Input CustomerID: ");
+            tempCustomerID = sc.nextInt();
+        } while(Customer.VerifyCustomerID(tempCustomerID));
         sc.nextLine();
-        System.out.print("Input BookID: ");
-        tempBookID = sc.nextInt();
+
+        do {
+            System.out.print("Input BookID: ");
+            tempBookID = sc.nextInt();
+        } while (Book.VerifyBookID2(tempBookID));
         sc.nextLine();
+
         System.out.print("Input product quantity: ");
         tempQuantity = sc.nextInt();
         sc.nextLine();
+
         System.out.print("Input purchase date(DD-MM-YYYY): ");
         tempPurchaseDate = sc.nextLine();
+
         Seller.addPurchase(tempPurchaseID, tempCustomerID, tempBookID, tempQuantity, tempPurchaseDate);
     }
 

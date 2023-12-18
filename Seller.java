@@ -28,7 +28,7 @@ public  class Seller extends Employee{
     static ArrayList<Book> bookList = new ArrayList<Book>();
 
     public static void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
-        String bookPath = "Book.txt";
+        String bookPath = "Bookstore_Management/Book.txt";
         double totalPrice = 0;
         try {
             // Create a FileReader
@@ -58,7 +58,7 @@ public  class Seller extends Employee{
             }
         }
         Scanner sc = new Scanner(System.in);
-        String filePath = "Purchase.txt";
+        String filePath = "Bookstore_Management/Purchase.txt";
         String WritingPurchase = tmpPurchaseID + "/" + tmpCustomerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
         
         try {
@@ -84,5 +84,55 @@ public  class Seller extends Employee{
         sc.close();
     }
     
+    static ArrayList<Integer> purchaseList = new ArrayList<Integer>();
+
+    public static void getPurchaseList(){
+        String purchasePath = "Bookstore_Management/Purchase.txt";
+        try {
+                // Create a FileReader
+                FileReader fileReader = new FileReader(purchasePath);
+                // Wrap the FileReader in a BufferedReader for efficient reading
+                BufferedReader bufferedReader = new BufferedReader(fileReader);
+                // Read each line from the file
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    // Process the line as needed
+                    //System.out.println(line);
+                    String[] parts = line.split("/");
+                    purchaseList.add(Integer.parseInt(parts[0]));
+                }
+
+                // Close the BufferedReader
+                bufferedReader.close();
+            } catch (IOException e) {
+                // Handle IO exceptions, e.g., if the file cannot be read
+                e.printStackTrace();
+            }
+    }
+    
+    public static boolean VerifyPurchaseID(int id)
+    {
+       
+        getPurchaseList();        
+
+        boolean exist = false;
+        for(int i : purchaseList)
+        {
+            // System.out.println(i.getName());
+            if(i == id)
+            {
+                exist = true;
+            }
+          
+        }
+
+        if(exist==true)
+        {
+            System.out.println("PurchaseID already exist");
+            return true;
+        }
+
+        return false;
+    }
 
 }
