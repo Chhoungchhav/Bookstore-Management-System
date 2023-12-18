@@ -104,7 +104,7 @@ public class Operation {
         System.out.print("Input import price: ");
         tempImportPrice = sc.nextDouble();
         sc.nextLine();
-        System.out.print("Input import date: ");
+        System.out.print("Input import date(DD-MM-YYYY): ");
         tempImportDate = sc.nextLine();
         Book.addBook(tempBookID, tempTitle, tempSalePrice, tempImportPrice, tempImportDate);
     }
@@ -124,7 +124,7 @@ public class Operation {
         System.out.print("Input product quantity: ");
         tempQuantity = sc.nextInt();
         sc.nextLine();
-        System.out.print("Input purchase date: ");
+        System.out.print("Input purchase date(DD-MM-YYYY): ");
         tempPurchaseDate = sc.nextLine();
         Seller.addPurchase(tempPurchaseID, tempCustomerID, tempBookID, tempQuantity, tempPurchaseDate);
     }
