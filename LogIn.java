@@ -1,9 +1,4 @@
-package Bookstore_Management;
-
 import java.util.ArrayList;
-
-import User.User;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,7 +9,7 @@ public class LogIn {
     
     public static void getEmployeeList()
     {
-        String filePath = "Bookstore_Management/EmployeeInfo.txt";
+        String filePath = "EmployeeInfo.txt";
         
         try {
             // Create a FileReader
@@ -57,7 +52,7 @@ public class LogIn {
 
         if(exist==true)
         {
-            System.out.println("User exist please pick different name");
+            System.out.println("Employee ID exist");
             return true;
         }
 
@@ -86,5 +81,22 @@ public class LogIn {
             System.out.println("Incorrect username or password");
         }
     }
+
+    /* 
+    public static String getPosition(Employee loginUser) {
+        getEmployeeList();
+
+        String position = null; // Initialize with a default value
+
+        for (Employee i : employeeList) {
+            if (i.equals(loginUser)) {
+                position = i.getPosition();
+                break; // Break out of the loop once a matching user is found
+            }
+        }
+
+        return position; // Returns null if no matching user is found
+    }
+    */
 
 }

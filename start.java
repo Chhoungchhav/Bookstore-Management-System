@@ -1,4 +1,3 @@
-package Bookstore_Management;
 
 import java.util.Scanner;
 
