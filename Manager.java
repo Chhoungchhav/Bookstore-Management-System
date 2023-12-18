@@ -8,11 +8,11 @@ public class Manager extends Employee {
     public Manager(int employeeID, String name,String password, String emailAddress, String startDate){
         super(employeeID, name, password, emailAddress, startDate);
     }
-    public void changeSellerSalary(List<Seller> sellers, double newSalary, int number) {
-        if (!sellers.isEmpty()) {
-            sellers.get(number-1).setSalary(newSalary);
-        }
-    }
+    // public void changeSellerSalary(List<Seller> sellers, double newSalary, int number) {
+    //     if (!sellers.isEmpty()) {
+    //         sellers.get(number-1).setSalary(newSalary);
+    //     }
+    // }
 
     @Override
     public double getSalary() {

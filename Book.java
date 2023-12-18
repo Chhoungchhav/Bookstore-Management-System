@@ -16,21 +16,21 @@ public class Book {
         this.importDate = importDate;
     }
     
-    public int getBookID(int bookID) {
+    public int getBookID() {
         return bookID;
     }
 
-    public double getSalePrice(int bookID){
+    public double getSalePrice(){
         return salePrice;
     }
 
-    public double getImportPrice(int bookID){
+    public double getImportPrice(){
         return importPrice;
     }
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
         Scanner sc = new Scanner(System.in);
-        String filePath = "Bookstore_Management/Book.txt";
+        String filePath = "Book.txt";
 
         String WritingContent = tmpBookID + "/" + tmpTitle + "/" + tmpSalePrice +"/" + tmpImportPrice + "/" + tmpImportDate;
         

@@ -1,8 +1,4 @@
-
 import java.util.ArrayList;
-
-import User.User;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +9,7 @@ public class LogIn {
     
     public static void getEmployeeList()
     {
-        String filePath = "Bookstore_Management/EmployeeInfo.txt";
+        String filePath = "EmployeeInfo.txt";
         
         try {
             // Create a FileReader
