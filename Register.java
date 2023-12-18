@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +7,7 @@ public class Register {
 
     public static void registerEmployee(int tmpID, String tmpName, String tmpPassword, String tmpEmail, String tmpStartDate, String tmpPosition){
         Scanner sc = new Scanner(System.in);
-        String filePath = "Bookstore_Management/EmployeeInfo.txt";
+        String filePath = "EmployeeInfo.txt";
 
         String WritingContent = tmpID + "/" + tmpName + "/" + tmpPassword +"/" + tmpEmail + "/" + tmpStartDate + "/" + tmpPosition;
         

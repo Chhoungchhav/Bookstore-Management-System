@@ -27,10 +27,10 @@ public class Operation {
 
             switch (choice) {
                 case 1:
-                    
+                    addBook();
                     break;
                 case 2:
-                    ;
+                    addPurchase();
                     break;
                 case 3:
                     addCustomer();
@@ -83,6 +83,50 @@ public class Operation {
         tmpPhone = sc.nextLine();
 
         Employee.addCustomer(tmpID, tmpName, tmpPhone);
+    }
+
+    private void addBook(){
+        int tempBookID;
+        double tempSalePrice, tempImportPrice;
+        String tempTitle, tempImportDate;
+        do {
+            System.out.print("Input BookID: ");
+            tempBookID = sc.nextInt();
+        } while (Book.VerifyBookID(tempBookID));
+        sc.nextLine();
+
+        System.out.print("Input title: ");
+        tempTitle = sc.nextLine();
+
+        System.out.print("Input sale price: ");
+        tempSalePrice = sc.nextDouble();
+        sc.nextLine();
+        System.out.print("Input import price: ");
+        tempImportPrice = sc.nextDouble();
+        sc.nextLine();
+        System.out.print("Input import date: ");
+        tempImportDate = sc.nextLine();
+        Book.addBook(tempBookID, tempTitle, tempSalePrice, tempImportPrice, tempImportDate);
+    }
+
+    private void addPurchase(){
+        int tempPurchaseID, tempQuantity, tempCustomerID, tempBookID;
+        String tempPurchaseDate;
+        System.out.print("Input PurchaseID: ");
+        tempPurchaseID = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Input CustomerID: ");
+        tempCustomerID = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Input BookID: ");
+        tempBookID = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Input product quantity: ");
+        tempQuantity = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Input purchase date: ");
+        tempPurchaseDate = sc.nextLine();
+        Seller.addPurchase(tempPurchaseID, tempCustomerID, tempBookID, tempQuantity, tempPurchaseDate);
     }
 
 }

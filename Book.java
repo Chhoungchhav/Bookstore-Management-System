@@ -1,6 +1,9 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Book {
@@ -59,6 +62,58 @@ public class Book {
 
 
         sc.close();
+    }
+
+    static ArrayList<Book> bookList = new ArrayList<Book>();
+
+    public static void getBookList(){
+        String bookPath = "Book.txt";
+        try {
+                // Create a FileReader
+                FileReader fileReader = new FileReader(bookPath);
+                // Wrap the FileReader in a BufferedReader for efficient reading
+                BufferedReader bufferedReader = new BufferedReader(fileReader);
+                // Read each line from the file
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    // Process the line as needed
+                    //System.out.println(line);
+                    String[] parts = line.split("/");
+                    Book tmp = new Book(Integer.parseInt(parts[0]), parts[1], Double.parseDouble(parts[2]), Double.parseDouble(parts[3]), parts[4]);
+                    bookList.add(tmp);
+                }
+
+                // Close the BufferedReader
+                bufferedReader.close();
+            } catch (IOException e) {
+                // Handle IO exceptions, e.g., if the file cannot be read
+                e.printStackTrace();
+            }
+    }
+    
+    public static boolean VerifyBookID(int id)
+    {
+       
+        getBookList();        
+
+        boolean exist = false;
+        for(Book i : bookList)
+        {
+            // System.out.println(i.getName());
+            if(i.getBookID() == id)
+            {
+                exist = true;
+            }
+          
+        }
+
+        if(exist==true)
+        {
+            System.out.println("BookID already exist");
+            return true;
+        }
+
+        return false;
     }
 
     public void checkPopularBook(){

@@ -11,7 +11,7 @@ public class LogIn {
     
     public static void getEmployeeList()
     {
-        String filePath = "Bookstore_Management/EmployeeInfo.txt";
+        String filePath = "EmployeeInfo.txt";
         
         try {
             // Create a FileReader
