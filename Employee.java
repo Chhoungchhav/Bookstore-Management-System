@@ -1,6 +1,10 @@
 
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.Year;
+import java.util.Scanner;
 
 public class Employee {
     private int employeeID, startYear, workYear, currentYear;
@@ -79,5 +83,38 @@ public class Employee {
             return true;
         }
         return false;
+    }
+
+    public static void addCustomer(int tmpCutomerID, String name, String info){
+        Scanner sc = new Scanner(System.in);
+        String customerPath = "Customer.txt";
+
+        String WritingCustomer = tmpCutomerID +"/"+name+ "/" + info;
+        
+        Customer customer1 = new Customer(tmpCutomerID);
+        System.out.println(customer1);
+
+        try {
+            // Create a FileWriter in append mode by passing true as the second parameter
+            FileWriter fileWriter = new FileWriter(customerPath, true);
+
+            // Wrap the FileWriter in a BufferedWriter for efficient writing
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            // Append the data to the file
+            bufferedWriter.write(WritingCustomer);
+            bufferedWriter.newLine(); // Add a new line for clarity
+
+            // Close the BufferedWriter to ensure all data is flushed to the file
+            bufferedWriter.close();
+
+            System.out.println("Data has been appended to the file successfully.");
+        } catch (IOException e) {
+            // Handle IO exceptions, e.g., if the file cannot be created or written to
+            e.printStackTrace();
+        }
+
+
+        sc.close();
     }
 }

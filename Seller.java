@@ -59,7 +59,7 @@ public  class Seller extends Employee{
         }
         Scanner sc = new Scanner(System.in);
         String filePath = "Purchase.txt";
-        String WritingContent = tmpPurchaseDate + "/" + tmpCustomerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
+        String WritingPurchase = tmpPurchaseDate + "/" + tmpCustomerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
         
         try {
             // Create a FileWriter in append mode by passing true as the second parameter
@@ -69,7 +69,7 @@ public  class Seller extends Employee{
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
             // Append the data to the file
-            bufferedWriter.write(WritingContent);
+            bufferedWriter.write(WritingPurchase);
             bufferedWriter.newLine(); // Add a new line for clarity
 
             // Close the BufferedWriter to ensure all data is flushed to the file
@@ -80,8 +80,8 @@ public  class Seller extends Employee{
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
         }
-
-
         sc.close();
     }
+    
+
 }

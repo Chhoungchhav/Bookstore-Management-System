@@ -6,13 +6,13 @@ public class Customer {
     Customer(int customerID){
         this.customerID = customerID;
     }
-    public int getCustomerID(int customerID){
+    public int getCustomerID(){
         return customerID;
     }
-    public String getCustomerName(String name){
+    public String getCustomerName(){
         return name;
     }
-    public String getCustomerPhone(String phoneNumber){
+    public String getCustomerPhone(){
         return phoneNumber;
     }
     public void checkRegularCustomer(){
