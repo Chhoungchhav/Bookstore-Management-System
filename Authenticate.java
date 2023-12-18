@@ -69,5 +69,6 @@ public class Authenticate {
         tmpPassword = sc.nextLine();
         Employee tmpuser = new Employee(tmpID, tmpPassword);
         LogIn.loginUser(tmpuser);
+        System.out.println(LogIn.getPosition(tmpuser));
     }
 }

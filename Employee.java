@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Employee {
     private int employeeID, startYear, workYear, currentYear;
-    private String name, emailAddress, password, startDate, year;
+    private String name, emailAddress, password, startDate, year, position;
     private double maxSalary, salary;
 
     
@@ -65,6 +65,10 @@ public class Employee {
         return emailAddress;
     }
 
+    public String getPosition(){
+        return position;
+    }
+    
     
     @Override
     public String toString() {

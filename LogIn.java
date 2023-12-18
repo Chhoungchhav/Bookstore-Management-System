@@ -6,10 +6,12 @@ import java.io.IOException;
 public class LogIn {
 
     static ArrayList<Employee> employeeList = new ArrayList<Employee>(); 
+
+    static ArrayList<String> positionList = new ArrayList<String>();
     
     public static void getEmployeeList()
     {
-        String filePath = "EmployeeInfo.txt";
+        String filePath = "Bookstore_Management/EmployeeInfo.txt";
         
         try {
             // Create a FileReader
@@ -22,8 +24,9 @@ public class LogIn {
                 // Process the line as needed
                 //System.out.println(line);
                 String[] parts = line.split("/");
-                Employee tmp = new Employee(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+                Employee tmp = new Employee(Integer.parseInt(parts[0]), parts[2]);
                 employeeList.add(tmp);
+                positionList.add(parts[5]);
             }
 
             // Close the BufferedReader
@@ -82,21 +85,20 @@ public class LogIn {
         }
     }
 
-    /* 
+    
     public static String getPosition(Employee loginUser) {
         getEmployeeList();
-
+    
         String position = null; // Initialize with a default value
-
-        for (Employee i : employeeList) {
-            if (i.equals(loginUser)) {
-                position = i.getPosition();
-                break; // Break out of the loop once a matching user is found
-            }
+    
+        int index = employeeList.indexOf(loginUser);
+    
+        if (index != -1) {
+            position = positionList.get(index);
         }
-
+    
         return position; // Returns null if no matching user is found
     }
-    */
+    
 
 }
