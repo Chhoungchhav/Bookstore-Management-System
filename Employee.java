@@ -84,11 +84,11 @@ public class Employee {
         return false;
     }
 
-    public static void addCustomer(int tmpCutomerID, String name, String phoneNumber){
+    public static void addCustomer(int tmpCutomerID, String name, String info){
         Scanner sc = new Scanner(System.in);
         String customerPath = "Bookstore_Management/Customer.txt";
 
-        String WritingCustomer = tmpCutomerID +"/"+name+ "/" + phoneNumber;
+        String WritingCustomer = tmpCutomerID +"/"+name+ "/" + info;
         
         Customer customer1 = new Customer(tmpCutomerID);
         System.out.println(customer1);
