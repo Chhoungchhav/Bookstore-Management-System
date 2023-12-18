@@ -2,6 +2,8 @@
 import java.util.Scanner;
 
 public class Authenticate {
+
+    private String position = null;
     
     private Scanner sc;
 
@@ -28,6 +30,10 @@ public class Authenticate {
             default:
                 break;
         }
+    }
+
+    public String getUserPosition(){
+        return this.position;
     }
 
     private void registerUser() {
@@ -69,6 +75,6 @@ public class Authenticate {
         tmpPassword = sc.nextLine();
         Employee tmpuser = new Employee(tmpID, tmpPassword);
         LogIn.loginUser(tmpuser);
-        System.out.println(LogIn.getPosition(tmpuser));
+        this.position = LogIn.getPosition(tmpuser);
     }
 }

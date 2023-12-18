@@ -9,7 +9,7 @@ public class Register {
 
     public static void registerEmployee(int tmpID, String tmpName, String tmpPassword, String tmpEmail, String tmpStartDate, String tmpPosition){
         Scanner sc = new Scanner(System.in);
-        String filePath = "EmployeeInfo.txt";
+        String filePath = "Bookstore_Management/EmployeeInfo.txt";
 
         String WritingContent = tmpID + "/" + tmpName + "/" + tmpPassword +"/" + tmpEmail + "/" + tmpStartDate + "/" + tmpPosition;
         
