@@ -34,6 +34,10 @@ public class Employee {
         this.password = password;
     }
 
+    public Employee(){
+        
+    }
+
     public double getSalary(){
         if (workYear >= 10){
             return 1.75;
@@ -86,7 +90,7 @@ public class Employee {
 
     public static void addCustomer(int tmpCutomerID, String name, String phoneNumber){
         Scanner sc = new Scanner(System.in);
-        String customerPath = "Bookstore_Management/Customer.txt";
+        String customerPath = "Customer.txt";
 
         String WritingCustomer = tmpCutomerID +"/"+name+ "/" + phoneNumber;
         

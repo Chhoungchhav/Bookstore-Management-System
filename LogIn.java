@@ -7,11 +7,13 @@ public class LogIn {
 
     static ArrayList<Employee> employeeList = new ArrayList<Employee>(); 
 
+    static ArrayList<Employee> employeeList2 = new ArrayList<Employee>(); 
+
     static ArrayList<String> positionList = new ArrayList<String>();
     
     public static void getEmployeeList()
     {
-        String filePath = "Bookstore_Management/EmployeeInfo.txt";
+        String filePath = "EmployeeInfo.txt";
         
         try {
             // Create a FileReader
@@ -25,7 +27,9 @@ public class LogIn {
                 //System.out.println(line);
                 String[] parts = line.split("/");
                 Employee tmp = new Employee(Integer.parseInt(parts[0]), parts[2]);
+                Employee tmp2 = new Employee(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
                 employeeList.add(tmp);
+                employeeList2.add(tmp2);
                 positionList.add(parts[5]);
             }
 
@@ -89,7 +93,7 @@ public class LogIn {
     public static String getPosition(Employee loginUser) {
         getEmployeeList();
     
-        String position = null; // Initialize with a default value
+        String position = null;
     
         int index = employeeList.indexOf(loginUser);
     
@@ -97,8 +101,25 @@ public class LogIn {
             position = positionList.get(index);
         }
     
-        return position; // Returns null if no matching user is found
+        return position; 
     }
+
+    public static Employee getEmployee1(Employee loginUser) {
+        getEmployeeList();
+    
+        Employee e1 = null;
+    
+        for (Employee i : employeeList2) {
+            if (i.equals(loginUser)) {
+                e1 = i;
+                break; // Break out of the loop once a matching user is found
+            }
+        }
+    
+        return e1; // Returns null if no matching user is found
+    }
+
+
     
 
 }

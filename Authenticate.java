@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Authenticate {
 
     private String position = null;
+
+    private Employee e1 = null;
     
     private Scanner sc;
 
@@ -18,7 +20,7 @@ public class Authenticate {
         System.out.println("2. Login");
         System.out.println("other. Quit");
         choice = sc.nextInt();
-        String tmp = sc.nextLine();
+        sc.nextLine();
 
         switch (choice) {
             case 1:
@@ -34,6 +36,10 @@ public class Authenticate {
 
     public String getUserPosition(){
         return this.position;
+    }
+
+    public Employee getEmployee(){
+        return this.e1;
     }
 
     private void registerUser() {
@@ -76,5 +82,6 @@ public class Authenticate {
         Employee tmpuser = new Employee(tmpID, tmpPassword);
         LogIn.loginUser(tmpuser);
         this.position = LogIn.getPosition(tmpuser);
+        this.e1 = LogIn.getEmployee1(tmpuser);
     }
 }

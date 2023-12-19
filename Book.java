@@ -33,7 +33,7 @@ public class Book {
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
         Scanner sc = new Scanner(System.in);
-        String filePath = "Bookstore_Management/Book.txt";
+        String filePath = "Book.txt";
 
         String WritingContent = tmpBookID + "/" + tmpTitle + "/" + tmpSalePrice +"/" + tmpImportPrice + "/" + tmpImportDate;
         
@@ -67,7 +67,7 @@ public class Book {
     static ArrayList<Book> bookList = new ArrayList<Book>();
 
     public static void getBookList(){
-        String bookPath = "Bookstore_Management/Book.txt";
+        String bookPath = "Book.txt";
         try {
                 // Create a FileReader
                 FileReader fileReader = new FileReader(bookPath);

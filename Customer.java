@@ -25,7 +25,7 @@ public class Customer {
     static ArrayList<Integer> customerList = new ArrayList<Integer>();
 
     public static void getCustomerList(){
-        String customerPath = "Bookstore_Management/Customer.txt";
+        String customerPath = "Customer.txt";
         try {
                 // Create a FileReader
                 FileReader fileReader = new FileReader(customerPath);

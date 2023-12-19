@@ -12,23 +12,22 @@ public  class Seller extends Employee{
     Seller(int employeeID, String name, String password, String emailAddress, String startDate){
         super(employeeID, name, password, emailAddress, startDate);
     }
+
+    Seller(){
+        
+    }
     
     @Override
     public double getSalary() {
         return super.getSalary() * this.salary;
     }
 
-    @Override
-    public String toString() {
-        String tmp = super.toString() + ", position: " + this.position;
-
-        return tmp;
-    }
+    
 
     static ArrayList<Book> bookList = new ArrayList<Book>();
 
     public static void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
-        String bookPath = "Bookstore_Management/Book.txt";
+        String bookPath = "Book.txt";
         double totalPrice = 0;
         try {
             // Create a FileReader
@@ -58,7 +57,7 @@ public  class Seller extends Employee{
             }
         }
         Scanner sc = new Scanner(System.in);
-        String filePath = "Bookstore_Management/Purchase.txt";
+        String filePath = "Purchase.txt";
         String WritingPurchase = tmpPurchaseID + "/" + tmpCustomerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
         
         try {
@@ -87,7 +86,7 @@ public  class Seller extends Employee{
     static ArrayList<Integer> purchaseList = new ArrayList<Integer>();
 
     public static void getPurchaseList(){
-        String purchasePath = "Bookstore_Management/Purchase.txt";
+        String purchasePath = "Purchase.txt";
         try {
                 // Create a FileReader
                 FileReader fileReader = new FileReader(purchasePath);
@@ -134,5 +133,11 @@ public  class Seller extends Employee{
 
         return false;
     }
+    
+    @Override
+        public String toString() {
+            String tmp = super.toString() + ", position: " + this.position;
 
+            return tmp;
+        }
 }
