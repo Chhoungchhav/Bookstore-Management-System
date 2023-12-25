@@ -34,7 +34,7 @@ public class OperationManager extends Operation{
                 checkPopularBook();
                 break;
             case 3:
-                ;
+                Customer.checkRegularCustomer();
                 break;
             case 4:
                 ;

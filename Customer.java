@@ -94,7 +94,7 @@ public class Customer {
                     .forEach(cid -> customer.increaseCount())
         );
     }
-    public void checkRegularCustomer(){
+    public static void checkRegularCustomer(){
         getCustomerList();
         countingBook();
         Customer regularCustomer = customerList1.stream()

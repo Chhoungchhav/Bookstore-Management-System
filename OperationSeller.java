@@ -98,6 +98,6 @@ public class OperationSeller extends Operation{
         System.out.print("Input purchase date(DD-MM-YYYY): ");
         tempPurchaseDate = sc.nextLine();
 
-        Seller.addPurchase(tempPurchaseID, tempCustomerID, tempBookID, tempQuantity, tempPurchaseDate);
+        Seller.addPurchase(tempPurchaseID, tempCustomerID, s1.getEmployeeID(), tempBookID, tempQuantity, tempPurchaseDate);
     }
 }

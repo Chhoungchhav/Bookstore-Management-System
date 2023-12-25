@@ -24,7 +24,7 @@ public  class Seller extends Employee{
     static ArrayList<Book> bookList = new ArrayList<Book>();
     static ArrayList<Book> bookList1 = new ArrayList<Book>();
 
-    public static void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
+    public static void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpSellerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
         String bookPath = "Book.txt";
         double totalPrice = 0;
         try {
@@ -59,7 +59,7 @@ public  class Seller extends Employee{
         }
         Scanner sc = new Scanner(System.in);
         String filePath = "Purchase.txt";
-        String WritingPurchase = tmpPurchaseID + "/" + tmpCustomerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
+        String WritingPurchase = tmpPurchaseID + "/" + tmpCustomerID + "/" + tmpSellerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
         
         try {
             // Create a FileWriter in append mode by passing true as the second parameter
