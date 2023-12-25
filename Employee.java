@@ -64,8 +64,16 @@ public class Employee {
         return name;
     }
 
+    public String getPassword(){
+        return password;
+    }
+
     public String getEmail(){
         return emailAddress;
+    }
+
+    public String getStartDate(){
+        return startDate;
     }
 
     

@@ -119,6 +119,38 @@ public class LogIn {
         return e1; // Returns null if no matching user is found
     }
 
+    public static Manager getManager(Employee loginUser) {
+        getEmployeeList();
+    
+        Manager manager = null;
+    
+        for (Employee i : employeeList2) {
+            if (i.equals(loginUser)) {
+                    manager = new Manager(i.getEmployeeID(), i.getName(), i.getPassword(), i.getEmail(), i.getStartDate());
+                    break;
+                }
+            }
+    
+        return manager; 
+    }
+
+    public static Seller getSeller(Employee loginUser) {
+        getEmployeeList();
+    
+        Seller seller = null;
+    
+        for (Employee i : employeeList2) {
+            if (i.equals(loginUser)) {
+                    seller = new Seller(i.getEmployeeID(), i.getName(), i.getPassword(), i.getEmail(), i.getStartDate());
+                    break;
+                }
+            }
+    
+        return seller; 
+    }
+    
+    
+
 
     
 

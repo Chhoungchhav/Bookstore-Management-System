@@ -4,15 +4,19 @@ public class OperationSeller extends Operation{
 
     private Scanner sc;
 
-    public OperationSeller(Scanner scanner, Employee employee){
+    private Seller s1;
+
+    public OperationSeller(Scanner scanner, Seller seller){
         super(scanner);
+        this.sc= scanner;
+        this.s1 = seller;
     }
 
     @Override
     public void runOperation(){
         int choice;
 
-        System.out.println("\nWelcome, " + "\n");
+        System.out.println("\nWelcome, " + s1.getName() + "\n");
         System.out.println("1. Add book");
         System.out.println("2. Add purchase");
         System.out.println("3. Add customer");
@@ -32,7 +36,7 @@ public class OperationSeller extends Operation{
                 addCustomer();
                 break;
             case 4:
-                ;
+                System.out.println(s1.getSalary());;
                 break;
             default:
                 break;

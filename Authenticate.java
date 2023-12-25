@@ -6,6 +6,10 @@ public class Authenticate {
     private String position = null;
 
     private Employee e1 = null;
+
+    private Manager manager = null;
+
+    private Seller seller = null;
     
     private Scanner sc;
 
@@ -40,6 +44,14 @@ public class Authenticate {
 
     public Employee getEmployee(){
         return this.e1;
+    }
+
+    public Manager getManager(){
+        return this.manager;
+    }
+
+    public Seller getSeller(){
+        return this.seller;
     }
 
     private void registerUser() {
@@ -83,5 +95,7 @@ public class Authenticate {
         LogIn.loginUser(tmpuser);
         this.position = LogIn.getPosition(tmpuser);
         this.e1 = LogIn.getEmployee1(tmpuser);
+        this.manager = LogIn.getManager(tmpuser);
+        this.seller = LogIn.getSeller(tmpuser);
     }
 }

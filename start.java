@@ -4,22 +4,24 @@ import java.util.Scanner;
 public class start {
     public static void main(String[] args) {
         String position = null;
-        Employee e1 = null;
+        Manager m1 = null;
+        Seller s1 = null;
         Scanner scanner = new Scanner(System.in);
         
         Authenticate authManager = new Authenticate(scanner);
         authManager.runAuthenticationSystem();
 
         position = authManager.getUserPosition();
-        e1 = authManager.getEmployee();
 
-        if (position != null && e1 != null){
+        if (position != null){
             if (position.equals("manager")){
-                OperationManager operation1 = new OperationManager(scanner, e1);
+                m1 = authManager.getManager();
+                OperationManager operation1 = new OperationManager(scanner, m1);
                 operation1.runOperation();
             }
             else if (position.equals("seller")){
-                OperationSeller operation1 = new OperationSeller(scanner, e1);
+                s1 = authManager.getSeller();
+                OperationSeller operation1 = new OperationSeller(scanner, s1);
                 operation1.runOperation();
             }
         }

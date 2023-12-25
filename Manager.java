@@ -1,7 +1,5 @@
 
 
-import java.util.List;
-
 public class Manager extends Employee {
     final String position = "manager";
     final double salary = 350;
