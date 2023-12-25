@@ -41,8 +41,8 @@ public class Book {
         return bookCount;
     }
 
-    public void addBookCount(int quantity){
-        this.bookCount += quantity;
+    public void increaseCount(){
+        this.bookCount++;
     }
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
@@ -161,10 +161,6 @@ public class Book {
         return false;
     }
 
-    public void checkPopularBook(){
-
-    }
-    
     public void checkBookStock(){
 
     }

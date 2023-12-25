@@ -22,6 +22,7 @@ public  class Seller extends Employee{
     
 
     static ArrayList<Book> bookList = new ArrayList<Book>();
+    static ArrayList<Book> bookList1 = new ArrayList<Book>();
 
     public static void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
         String bookPath = "Book.txt";
@@ -39,6 +40,9 @@ public  class Seller extends Employee{
                 String[] parts = line.split("/");
                 Book tmp = new Book(Integer.parseInt(parts[0]), parts[1], Double.parseDouble(parts[2]), Double.parseDouble(parts[3]), parts[4]);
                 bookList.add(tmp);
+
+                Book tmp1 = new Book(Integer.parseInt(parts[0]),0);
+                bookList1.add(tmp1);
             }
 
             // Close the BufferedReader
@@ -81,7 +85,8 @@ public  class Seller extends Employee{
     }
     
     static ArrayList<Integer> purchaseList = new ArrayList<Integer>();
-
+    static ArrayList<Integer> bookPurchaseList = new ArrayList<Integer>();
+    static ArrayList<Integer> customerPurchaseList = new ArrayList<Integer>();
     public static void getPurchaseList(){
         String purchasePath = "Purchase.txt";
         try {
@@ -96,6 +101,8 @@ public  class Seller extends Employee{
                     //System.out.println(line);
                     String[] parts = line.split("/");
                     purchaseList.add(Integer.parseInt(parts[0]));
+                    customerPurchaseList.add(Integer.parseInt(parts[1]));
+                    bookPurchaseList.add(Integer.parseInt(parts[2]));
                 }
 
                 // Close the BufferedReader
@@ -130,6 +137,7 @@ public  class Seller extends Employee{
 
         return false;
     }
+    
     
     @Override
         public String toString() {

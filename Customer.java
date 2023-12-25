@@ -2,12 +2,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
 
 public class Customer {
-    private int customerID;
+    private int customerID, count;
     private String name, phoneNumber;
     Customer(int customerID){
         this.customerID = customerID;
+    }
+    Customer(int customerID, int count){
+        this.customerID = customerID;
+        this.count = count;
     }
     public int getCustomerID(){
         return customerID;
@@ -18,12 +24,16 @@ public class Customer {
     public String getCustomerPhone(){
         return phoneNumber;
     }
-    public void checkRegularCustomer(){
-
+    public int getCustomerCount(){
+        return count;
     }
+    public void increaseCount(){
+        this.count++;
+    }
+    
 
     static ArrayList<Integer> customerList = new ArrayList<Integer>();
-
+    static ArrayList<Customer> customerList1 = new ArrayList<Customer>();
     public static void getCustomerList(){
         String customerPath = "Customer.txt";
         try {
@@ -38,6 +48,8 @@ public class Customer {
                     //System.out.println(line);
                     String[] parts = line.split("/");
                     customerList.add(Integer.parseInt(parts[0]));
+                    Customer tmp1 = new Customer(Integer.parseInt(parts[0]),0);
+                    customerList1.add(tmp1);
                 }
 
                 // Close the BufferedReader
@@ -72,4 +84,29 @@ public class Customer {
 
         return false;
     }
+
+    public static void countingBook(){
+        Seller.getPurchaseList();
+        getCustomerList();
+        customerList1.forEach(customer ->
+            Seller.customerPurchaseList.stream()
+                    .filter(cid -> customer.getCustomerID() == cid)
+                    .forEach(cid -> customer.increaseCount())
+        );
+    }
+    public void checkRegularCustomer(){
+        getCustomerList();
+        countingBook();
+        Customer regularCustomer = customerList1.stream()
+            .max(Comparator.comparingInt(Customer::getCustomerCount))
+            .orElse(null);
+        if (regularCustomer != null) {
+            int regID = regularCustomer.getCustomerID();
+            String regName = regularCustomer.getCustomerName();
+            System.out.println("Regular Customer ID: " + regID + ", Name: " + regName);
+        } else {
+            System.out.println("No regular customer found.");
+        }
+    }
+    
 }
