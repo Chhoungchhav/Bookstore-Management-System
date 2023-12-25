@@ -4,7 +4,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Iterator;
 
 public class Book {
     private int bookID, bookCount;
@@ -29,6 +32,10 @@ public class Book {
         return bookID;
     }
 
+    public String getBookTitle(){
+        return title;
+    }
+
     public double getSalePrice(){
         return salePrice;
     }
@@ -41,8 +48,9 @@ public class Book {
         return bookCount;
     }
 
-    public void increaseCount(){
-        this.bookCount++;
+    public void increaseCount(int quantity){
+        int count = this.bookCount + quantity;
+        this.bookCount = count;
     }
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
@@ -161,8 +169,34 @@ public class Book {
         return false;
     }
 
-    public void checkBookStock(){
+    public static void countingBook(){
+        Seller.getPurchaseList();
+        getBookList();
+        List<Integer> quantityList = Seller.quantityPurchaseList;
+        Iterator<Integer> quantityIterator = quantityList.iterator();
+        bookList1.forEach(book->
+        Seller.bookPurchaseList.stream()
+                .filter(bid -> book.getBookID() == bid)
+                .findFirst()
+                .ifPresent(bid -> {
+                    int quantity = quantityIterator.next();
+                    book.increaseCount(quantity);
+                })        
+            );
+    }
 
+    public static void checkPopularBook(){
+        getBookList();
+        countingBook();
+        Book popularBook = bookList1.stream()
+            .max(Comparator.comparingInt(Book::getBookCount))
+            .orElse(null);
+        if(popularBook!=null){
+            int popBookID = popularBook.getBookID();
+            System.out.println("Popular book ID: " + popBookID);
+        } else {
+            System.out.println("No popular book found.");
+        }
     }
     @Override
     public String toString() {

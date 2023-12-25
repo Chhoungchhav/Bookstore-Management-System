@@ -17,30 +17,32 @@ public class OperationSeller extends Operation{
         int choice;
 
         System.out.println("\nWelcome, " + s1.getName() + "\n");
+        do{
         System.out.println("1. Add book");
         System.out.println("2. Add purchase");
         System.out.println("3. Add customer");
         System.out.println("4. Check Salary");
-        System.out.println("other. Quit");
+        System.out.println("0. Quit");
         choice = sc.nextInt();
         sc.nextLine();
-
-        switch (choice) {
-            case 1:
-                addBook();
-                break;
-            case 2:
-                addPurchase();
-                break;
-            case 3:
-                addCustomer();
-                break;
-            case 4:
-                System.out.println(s1.getSalary());;
-                break;
-            default:
-                break;
-        }
+        
+            switch (choice) {
+                case 1:
+                    addBook();
+                    break;
+                case 2:
+                    addPurchase();
+                    break;
+                case 3:
+                    addCustomer();
+                    break;
+                case 4:
+                    System.out.println(s1.getSalary());;
+                    break;
+                default:
+                    break;
+            }
+        }while(choice<=5);
     }
 
     private void addBook(){

@@ -102,8 +102,7 @@ public class Customer {
             .orElse(null);
         if (regularCustomer != null) {
             int regID = regularCustomer.getCustomerID();
-            String regName = regularCustomer.getCustomerName();
-            System.out.println("Regular Customer ID: " + regID + ", Name: " + regName);
+            System.out.println("Regular Customer ID: " + regID);
         } else {
             System.out.println("No regular customer found.");
         }

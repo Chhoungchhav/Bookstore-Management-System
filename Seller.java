@@ -87,6 +87,7 @@ public  class Seller extends Employee{
     static ArrayList<Integer> purchaseList = new ArrayList<Integer>();
     static ArrayList<Integer> bookPurchaseList = new ArrayList<Integer>();
     static ArrayList<Integer> customerPurchaseList = new ArrayList<Integer>();
+    static ArrayList<Integer> quantityPurchaseList = new ArrayList<Integer>();
     public static void getPurchaseList(){
         String purchasePath = "Purchase.txt";
         try {
@@ -103,6 +104,7 @@ public  class Seller extends Employee{
                     purchaseList.add(Integer.parseInt(parts[0]));
                     customerPurchaseList.add(Integer.parseInt(parts[1]));
                     bookPurchaseList.add(Integer.parseInt(parts[2]));
+                    quantityPurchaseList.add(Integer.parseInt(parts[4]));
                 }
 
                 // Close the BufferedReader
