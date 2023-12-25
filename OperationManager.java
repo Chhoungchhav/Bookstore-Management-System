@@ -31,7 +31,7 @@ public class OperationManager extends Operation{
                 super.addCustomer();
                 break;
             case 2:
-                ;
+                checkPopularBook();
                 break;
             case 3:
                 ;
@@ -45,6 +45,10 @@ public class OperationManager extends Operation{
             default:
                 break;
         }
+    }
+
+    private void checkPopularBook(){
+
     }
 
 }

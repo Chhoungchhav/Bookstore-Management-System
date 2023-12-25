@@ -7,16 +7,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Book {
-    private int bookID, inStockBook;
+    private int bookID, bookCount;
     private String title;
     private double salePrice, importPrice;
     private String importDate;
-    Book(int bookID, String title, double salePrice, double importPrice, String importDate){
+
+    public Book(int bookID, String title, double salePrice, double importPrice, String importDate){
         this.bookID = bookID;
         this.title = title;
         this.salePrice = salePrice;
         this.importPrice = importPrice;
         this.importDate = importDate;
+    }
+
+    public Book(int bookID, int bookCount){
+        this.bookID = bookID;
+        this.bookCount = bookCount;
     }
     
     public int getBookID() {
@@ -29,6 +35,14 @@ public class Book {
 
     public double getImportPrice(){
         return importPrice;
+    }
+
+    public int getBookCount(){
+        return bookCount;
+    }
+
+    public void addBookCount(int quantity){
+        this.bookCount += quantity;
     }
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
@@ -66,6 +80,8 @@ public class Book {
 
     static ArrayList<Book> bookList = new ArrayList<Book>();
 
+    static ArrayList<Book> bookList1 = new ArrayList<Book>();
+
     public static void getBookList(){
         String bookPath = "Book.txt";
         try {
@@ -81,6 +97,10 @@ public class Book {
                     String[] parts = line.split("/");
                     Book tmp = new Book(Integer.parseInt(parts[0]), parts[1], Double.parseDouble(parts[2]), Double.parseDouble(parts[3]), parts[4]);
                     bookList.add(tmp);
+
+                    Book tmp1 = new Book(Integer.parseInt(parts[0]),0);
+                    bookList1.add(tmp1);
+
                 }
 
                 // Close the BufferedReader

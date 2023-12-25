@@ -34,10 +34,6 @@ public class Employee {
         this.password = password;
     }
 
-    public Employee(){
-        
-    }
-
     public double getSalary(){
         if (workYear >= 10){
             return 1.75;

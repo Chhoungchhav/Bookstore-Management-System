@@ -8,13 +8,10 @@ import java.util.Scanner;
 
 public  class Seller extends Employee{
     final String position = "seller";
-    final double salary = 200;
-    Seller(int employeeID, String name, String password, String emailAddress, String startDate){
+    double salary = 200;
+    
+    public Seller(int employeeID, String name, String password, String emailAddress, String startDate){
         super(employeeID, name, password, emailAddress, startDate);
-    }
-
-    Seller(){
-        
     }
     
     @Override
