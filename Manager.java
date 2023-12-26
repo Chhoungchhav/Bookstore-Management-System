@@ -1,6 +1,6 @@
 public class Manager extends Employee {
     final String position = "manager";
-    double salary = 350;
+   private double salary = 350;
     
     public Manager(int employeeID, String name,String password, String emailAddress, String startDate){
         super(employeeID, name, password, emailAddress, startDate);

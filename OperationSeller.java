@@ -14,6 +14,7 @@ public class OperationSeller extends Operation{
 
     @Override
     public void runOperation(){
+        try{
         int choice, choice1 = 0;
 
         System.out.println("\nWelcome, " + s1.getName() + "\n");
@@ -55,6 +56,9 @@ public class OperationSeller extends Operation{
         }
 
         }while(choice < 5 && choice1==1);
+        }catch (java.util.InputMismatchException e){
+            System.out.println("Please input correct data type");
+        }
     }
 
     private void addBook(){

@@ -86,16 +86,21 @@ public class Authenticate {
         int tmpID;
         String tmpPassword;
 
-        System.out.print("Input employee ID: ");
-        tmpID = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Input password: ");
-        tmpPassword = sc.nextLine();
-        Employee tmpuser = new Employee(tmpID, tmpPassword);
-        LogIn.loginUser(tmpuser);
-        this.position = LogIn.getPosition(tmpuser);
-        this.e1 = LogIn.getEmployee1(tmpuser);
-        this.manager = LogIn.getManager(tmpuser);
-        this.seller = LogIn.getSeller(tmpuser);
+        try{
+
+            System.out.print("Input employee ID: ");
+            tmpID = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Input password: ");
+            tmpPassword = sc.nextLine();
+            Employee tmpuser = new Employee(tmpID, tmpPassword);
+            LogIn.loginUser(tmpuser);
+            this.position = LogIn.getPosition(tmpuser);
+            this.e1 = LogIn.getEmployee1(tmpuser);
+            this.manager = LogIn.getManager(tmpuser);
+            this.seller = LogIn.getSeller(tmpuser);
+        } catch (java.util.InputMismatchException e) {
+            System.out.println("Please input correct data type");
+        }
     }
 }

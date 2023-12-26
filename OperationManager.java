@@ -14,6 +14,7 @@ public class OperationManager extends Operation{
 
     @Override
     public void runOperation(){
+        try{
         int choice, choice1 = 0;
 
         System.out.println("\nWelcome, " + m1.getName() + "\n");
@@ -58,6 +59,9 @@ public class OperationManager extends Operation{
         }
 
         }while(choice<=5 && choice1 == 1);
+        }catch (java.util.InputMismatchException e){
+            System.out.println("Please input correct data type");
+        }
     }
 
 }

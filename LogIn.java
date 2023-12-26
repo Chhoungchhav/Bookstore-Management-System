@@ -11,6 +11,8 @@ public class LogIn {
 
     static ArrayList<String> positionList = new ArrayList<String>();
     
+    static ArrayList<Manager> mList = new ArrayList<Manager>();
+    
     public static void getEmployeeList()
     {
         String filePath = "EmployeeInfo.txt";
@@ -27,7 +29,11 @@ public class LogIn {
                 //System.out.println(line);
                 String[] parts = line.split("/");
                 Employee tmp = new Employee(Integer.parseInt(parts[0]), parts[2]);
-                Employee tmp2 = new Employee(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+                Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+                if(parts[5].equals("manager"))
+                {
+                    mList.add((Manager)tmp2);
+                }
                 employeeList.add(tmp);
                 employeeList2.add(tmp2);
                 positionList.add(parts[5]);

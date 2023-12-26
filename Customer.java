@@ -97,9 +97,11 @@ public class Customer {
     public static void checkRegularCustomer(){
         getCustomerList();
         countingBook();
+      
         Customer regularCustomer = customerList1.stream()
             .max(Comparator.comparingInt(Customer::getCustomerCount))
             .orElse(null);
+
         if (regularCustomer != null) {
             int regID = regularCustomer.getCustomerID();
             System.out.println("Regular Customer ID: " + regID);
