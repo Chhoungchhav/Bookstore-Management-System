@@ -14,7 +14,7 @@ public class OperationSeller extends Operation{
 
     @Override
     public void runOperation(){
-        int choice;
+        int choice, choice1 = 0;
 
         System.out.println("\nWelcome, " + s1.getName() + "\n");
         do{
@@ -22,27 +22,39 @@ public class OperationSeller extends Operation{
         System.out.println("2. Add purchase");
         System.out.println("3. Add customer");
         System.out.println("4. Check Salary");
-        System.out.println("0. Quit");
+        System.out.println("5. Quit");
+        System.out.print("Enter your choice: ");
         choice = sc.nextInt();
         sc.nextLine();
         
-            switch (choice) {
-                case 1:
-                    addBook();
-                    break;
-                case 2:
-                    addPurchase();
-                    break;
-                case 3:
-                    addCustomer();
-                    break;
-                case 4:
-                    System.out.println(s1.getSalary());;
-                    break;
-                default:
-                    break;
-            }
-        }while(choice<=5);
+        switch (choice) {
+            case 1:
+                addBook();
+                break;
+            case 2:
+                addPurchase();
+                break;
+            case 3:
+                addCustomer();
+                break;
+            case 4:
+                System.out.println(s1.getSalary());;
+                break;
+            default:
+                break;
+        }
+
+        if (choice < 5){
+            System.out.println("\nDo you want to continue the operation?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            System.out.print("Enter your choice: ");
+            choice1 = sc.nextInt();
+            sc.nextLine();
+            System.out.println();
+        }
+
+        }while(choice < 5 && choice1==1);
     }
 
     private void addBook(){
@@ -100,6 +112,6 @@ public class OperationSeller extends Operation{
         System.out.print("Input purchase date(DD-MM-YYYY): ");
         tempPurchaseDate = sc.nextLine();
 
-        Seller.addPurchase(tempPurchaseID, tempCustomerID, s1.getEmployeeID(), tempBookID, tempQuantity, tempPurchaseDate);
+        s1.addPurchase(tempPurchaseID, tempCustomerID, s1.getEmployeeID(), tempBookID, tempQuantity, tempPurchaseDate);
     }
 }

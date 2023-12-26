@@ -24,7 +24,7 @@ public  class Seller extends Employee{
     static ArrayList<Book> bookList = new ArrayList<Book>();
     static ArrayList<Book> bookList1 = new ArrayList<Book>();
 
-    public static void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpSellerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
+    public void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpSellerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
         String bookPath = "Book.txt";
         double totalPrice = 0;
         try {

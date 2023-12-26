@@ -125,7 +125,7 @@ public class LogIn {
         Manager manager = null;
     
         for (Employee i : employeeList2) {
-            if (i.equals(loginUser)) {
+            if (i.equals(loginUser) && getPosition(loginUser).equals("manager")) {
                     manager = new Manager(i.getEmployeeID(), i.getName(), i.getPassword(), i.getEmail(), i.getStartDate());
                     break;
                 }
@@ -140,7 +140,7 @@ public class LogIn {
         Seller seller = null;
     
         for (Employee i : employeeList2) {
-            if (i.equals(loginUser)) {
+            if (i.equals(loginUser) && getPosition(loginUser).equals("manager")) {
                     seller = new Seller(i.getEmployeeID(), i.getName(), i.getPassword(), i.getEmail(), i.getStartDate());
                     break;
                 }
