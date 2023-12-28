@@ -106,7 +106,7 @@ public class Authenticate {
         JTextField startDateField = new JTextField();
         JLabel positionLabel = new JLabel("Position:");
         JTextField positionField = new JTextField();
-        JLabel buttonLabel = new JLabel("");
+        JButton backButton = new JButton("Back");
         JButton registerButtonPanel3 = new JButton("Register");
 
         registerButtonPanel3.addActionListener(new ActionListener() {
@@ -133,6 +133,14 @@ public class Authenticate {
             }
         });
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) frame.getContentPane().getLayout();
+                cardLayout.show(frame.getContentPane(), "main");
+            }
+        });
+
         panel.add(idLabel);
         panel.add(idField);
         panel.add(nameLabel);
@@ -145,7 +153,7 @@ public class Authenticate {
         panel.add(startDateField);
         panel.add(positionLabel);
         panel.add(positionField);
-        panel.add(buttonLabel);
+        panel.add(backButton);
         panel.add(registerButtonPanel3);
 
         return panel;
@@ -160,7 +168,7 @@ public class Authenticate {
         JTextField idField = new JTextField();
         JLabel passwordLabel = new JLabel("Password:");
         JPasswordField passwordField = new JPasswordField();
-        JLabel buttonLabel = new JLabel("");
+        JButton backButton = new JButton("Back");
         JButton loginButtonPanel2 = new JButton("Login");
 
         loginButtonPanel2.addActionListener(new ActionListener() {
@@ -183,11 +191,19 @@ public class Authenticate {
             }
         });
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) frame.getContentPane().getLayout();
+                cardLayout.show(frame.getContentPane(), "main");
+            }
+        });
+
         panel.add(idLabel);
         panel.add(idField);
         panel.add(passwordLabel);
         panel.add(passwordField);
-        panel.add(buttonLabel);
+        panel.add(backButton);
         panel.add(loginButtonPanel2);
 
         return panel;
