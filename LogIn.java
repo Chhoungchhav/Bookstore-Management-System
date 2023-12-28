@@ -5,13 +5,11 @@ import java.io.IOException;
 
 public class LogIn {
 
-    static ArrayList<Employee> employeeList = new ArrayList<Employee>(); 
-
-    static ArrayList<Employee> employeeList2 = new ArrayList<Employee>(); 
-
-    static ArrayList<String> positionList = new ArrayList<String>();
+    static ArrayList<Employee> employeeList = new ArrayList<Employee>();
     
     static ArrayList<Manager> mList = new ArrayList<Manager>();
+
+    static ArrayList<Seller> sList = new ArrayList<Seller>();
     
     public static void getEmployeeList()
     {
@@ -29,14 +27,16 @@ public class LogIn {
                 //System.out.println(line);
                 String[] parts = line.split("/");
                 Employee tmp = new Employee(Integer.parseInt(parts[0]), parts[2]);
-                Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
-                if(parts[5].equals("manager"))
-                {
+                
+                if(parts[5].equals("manager")) {
+                    Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
                     mList.add((Manager)tmp2);
                 }
+                else if(parts[5].equals("seller")) {
+                    Employee tmp2 = new Seller(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+                    sList.add((Seller)tmp2);
+                }
                 employeeList.add(tmp);
-                employeeList2.add(tmp2);
-                positionList.add(parts[5]);
             }
 
             // Close the BufferedReader
@@ -94,65 +94,35 @@ public class LogIn {
             System.out.println("Incorrect username or password");
         }
     }
-
     
-    public static String getPosition(Employee loginUser) {
+    public static Manager getManager(Employee loginUser){
         getEmployeeList();
-    
-        String position = null;
-    
-        int index = employeeList.indexOf(loginUser);
-    
-        if (index != -1) {
-            position = positionList.get(index);
-        }
-    
-        return position; 
-    }
 
-    public static Employee getEmployee1(Employee loginUser) {
-        getEmployeeList();
-    
-        Employee e1 = null;
-    
-        for (Employee i : employeeList2) {
+        Manager m1 = null;
+
+        for (Manager i : mList) {
             if (i.equals(loginUser)) {
-                e1 = i;
+                m1 = i;
                 break; // Break out of the loop once a matching user is found
             }
         }
     
-        return e1; // Returns null if no matching user is found
-    }
-
-    public static Manager getManager(Employee loginUser) {
-        getEmployeeList();
-    
-        Manager manager = null;
-    
-        for (Employee i : employeeList2) {
-            if (i.equals(loginUser) && getPosition(loginUser).equals("manager")) {
-                    manager = new Manager(i.getEmployeeID(), i.getName(), i.getPassword(), i.getEmail(), i.getStartDate());
-                    break;
-                }
-            }
-    
-        return manager; 
+        return m1;
     }
 
     public static Seller getSeller(Employee loginUser) {
         getEmployeeList();
     
-        Seller seller = null;
+        Seller s1 = null;
     
-        for (Employee i : employeeList2) {
-            if (i.equals(loginUser) && getPosition(loginUser).equals("manager")) {
-                    seller = new Seller(i.getEmployeeID(), i.getName(), i.getPassword(), i.getEmail(), i.getStartDate());
-                    break;
-                }
+        for (Seller i : sList) {
+            if (i.equals(loginUser)) {
+                s1 = i;
+                break; // Break out of the loop once a matching user is found
             }
-    
-        return seller; 
+        }
+
+        return s1; 
     }
     
     
