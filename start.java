@@ -7,11 +7,12 @@ public class start {
         Seller s1 = null;
         Scanner scanner = new Scanner(System.in);
         
-        Authenticate authManager = new Authenticate(scanner);
+        Authenticate authManager = new Authenticate();
         authManager.runAuthenticationSystem();
         
         m1 = authManager.getManager();
         s1 = authManager.getSeller();
+        
         if (m1 != null){
             OperationManager operation1 = new OperationManager(scanner, m1);
             operation1.runOperation();

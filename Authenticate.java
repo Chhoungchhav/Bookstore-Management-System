@@ -1,4 +1,7 @@
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 public class Authenticate {
@@ -6,31 +9,46 @@ public class Authenticate {
     private Manager manager = null;
 
     private Seller seller = null;
-    
-    private Scanner sc;
 
-    public Authenticate(Scanner scanner) {
-        this.sc = scanner;
+    private static JFrame frame;
+
+    public Authenticate() {
     }
 
     public void runAuthenticationSystem() {
-        int choice;
+        frame = new JFrame("Login and Register");
 
-        System.out.println("1. Register");
-        System.out.println("2. Login");
-        System.out.println("other. Quit");
-        choice = sc.nextInt();
-        sc.nextLine();
+        JPanel panel1 = mainPanel();
+        JPanel panel2 = loginUser();
+        JPanel panel3 = registerUser();
 
-        switch (choice) {
-            case 1:
-                registerUser();
-                break;
-            case 2:
-                loginUser();
-                break;
-            default:
-                break;
+        frame.setLayout(new CardLayout());
+        frame.add(panel1, "main");
+        frame.add(panel2, "login");
+        frame.add(panel3, "register");
+
+        // Setting frame properties
+        frame.setSize(400, 250);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        waitForGUIClose();
+
+        // Assign values after the GUI is closed
+        this.manager= getManager();
+        this.seller = getSeller();
+
+        
+    }
+    
+    private void waitForGUIClose() {
+        // Wait for the frame to be closed
+        while (frame.isVisible()) {
+            try {
+                Thread.sleep(100); // Sleep for a short duration
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -42,51 +60,136 @@ public class Authenticate {
         return this.seller;
     }
 
-    private void registerUser() {
-        String tmpPassword;
-        String tmpPosition;
-        int tmpID;
-        String tmpName, tmpEmail, tmpStartDate;
+    private static JPanel mainPanel() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
 
-        do {
-            System.out.print("Input employee ID: ");
-            tmpID = sc.nextInt();
-        } while (LogIn.VerifyEmployeeID(tmpID));
-        sc.nextLine();
+        JButton loginButton = new JButton("Login");
+        JButton registerButton = new JButton("Register");
 
-        System.out.print("Input name: ");
-        tmpName = sc.nextLine();
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) frame.getContentPane().getLayout();
+                cardLayout.show(frame.getContentPane(), "login");
+            }
+        });
 
-        System.out.print("Input password: ");
-        tmpPassword = sc.nextLine();
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) frame.getContentPane().getLayout();
+                cardLayout.show(frame.getContentPane(), "register");
+            }
+        });
 
-        System.out.print("Input position: ");
-        tmpPosition = sc.nextLine();
-        System.out.print("Input email address: ");
-        tmpEmail = sc.nextLine();
-        System.out.print("Input start date (DD-MM-YYYY): ");
-        tmpStartDate = sc.nextLine();
+        panel.add(loginButton);
+        panel.add(registerButton);
 
-        Register.registerEmployee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate, tmpPosition);
+        return panel;
     }
 
-    private void loginUser() {
-        int tmpID;
-        String tmpPassword;
+    private JPanel registerUser() {
 
-        try{
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
 
-            System.out.print("Input employee ID: ");
-            tmpID = sc.nextInt();
-            sc.nextLine();
-            System.out.print("Input password: ");
-            tmpPassword = sc.nextLine();
-            Employee tmpuser = new Employee(tmpID, tmpPassword);
-            LogIn.loginUser(tmpuser);
-            this.manager = LogIn.getManager(tmpuser);
-            this.seller = LogIn.getSeller(tmpuser);
-        } catch (java.util.InputMismatchException e) {
-            System.out.println("Please input correct data type");
-        }
+        JLabel idLabel = new JLabel("Employee ID:");
+        JTextField idField = new JTextField();
+        JLabel nameLabel = new JLabel("Name:");
+        JTextField nameField = new JTextField();
+        JLabel passwordLabel = new JLabel("Password:");
+        JPasswordField passwordField = new JPasswordField();
+        JLabel emailLabel = new JLabel("Email:");
+        JTextField emailField = new JTextField();
+        JLabel startDateLabel = new JLabel("Start Date:");
+        JTextField startDateField = new JTextField();
+        JLabel positionLabel = new JLabel("Position:");
+        JTextField positionField = new JTextField();
+        JLabel buttonLabel = new JLabel("");
+        JButton registerButtonPanel3 = new JButton("Register");
+
+        registerButtonPanel3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int tmpID = Integer.parseInt(idField.getText());
+                    String tmpName = nameField.getText();
+                    String tmpPassword = new String(passwordField.getPassword());
+                    String tmpEmail = emailField.getText();
+                    String tmpStartDate = startDateField.getText();
+                    String tmpPosition = positionField.getText();
+                    Register.registerEmployee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate, tmpPosition);
+                    JOptionPane.showMessageDialog(frame, "Register button clicked in register panel");
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(frame, "Invalid new username format. Please enter a valid integer.");
+                    idField.setText(""); // Clear the field
+                    nameField.setText("");
+                    passwordField.setText("");
+                    emailField.setText("");
+                    startDateField.setText("");
+                    positionField.setText("");
+                }
+            }
+        });
+
+        panel.add(idLabel);
+        panel.add(idField);
+        panel.add(nameLabel);
+        panel.add(nameField);
+        panel.add(passwordLabel);
+        panel.add(passwordField);
+        panel.add(emailLabel);
+        panel.add(emailField);
+        panel.add(startDateLabel);
+        panel.add(startDateField);
+        panel.add(positionLabel);
+        panel.add(positionField);
+        panel.add(buttonLabel);
+        panel.add(registerButtonPanel3);
+
+        return panel;
+    }
+
+
+    private JPanel loginUser() {
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+
+        JLabel idLabel = new JLabel("Employee ID:");
+        JTextField idField = new JTextField();
+        JLabel passwordLabel = new JLabel("Password:");
+        JPasswordField passwordField = new JPasswordField();
+        JLabel buttonLabel = new JLabel("");
+        JButton loginButtonPanel2 = new JButton("Login");
+
+        loginButtonPanel2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int tmpID = Integer.parseInt(idField.getText());
+                    String tmpPassword = new String(passwordField.getPassword());
+                    Employee tmpuser = new Employee(tmpID, tmpPassword);
+                    LogIn.loginUser(tmpuser);
+                    Authenticate.this.manager = LogIn.getManager(tmpuser);
+                    Authenticate.this.seller = LogIn.getSeller(tmpuser);
+                    JOptionPane.showMessageDialog(frame, "Login button clicked in login panel");
+                    frame.dispose();
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(frame, "Invalid new username format. Please enter a valid integer.");
+                    idField.setText("");
+                    passwordField.setText("");
+                }
+            }
+        });
+
+        panel.add(idLabel);
+        panel.add(idField);
+        panel.add(passwordLabel);
+        panel.add(passwordField);
+        panel.add(buttonLabel);
+        panel.add(loginButtonPanel2);
+
+        return panel;
     }
 }
