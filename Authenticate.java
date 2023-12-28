@@ -16,7 +16,7 @@ public class Authenticate {
     }
 
     public void runAuthenticationSystem() {
-        frame = new JFrame("Login and Register");
+        frame = new JFrame("Authentication");
 
         JPanel panel1 = mainPanel();
         JPanel panel2 = loginUser();
