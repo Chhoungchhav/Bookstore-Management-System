@@ -72,7 +72,7 @@ public class LogIn {
         return false;
     }
 
-    public static void loginUser(Employee loginUser){
+    public static boolean loginUser(Employee loginUser){
         
         getEmployeeList();   
 
@@ -86,13 +86,7 @@ public class LogIn {
           
         }
 
-        if(exist==true)
-        {
-            System.out.println("Log in successful");
-        }else
-        {
-            System.out.println("Incorrect username or password");
-        }
+        return exist;
     }
     
     public static Manager getManager(Employee loginUser){

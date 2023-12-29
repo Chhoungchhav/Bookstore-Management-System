@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Register {
 
-    public static void registerEmployee(int tmpID, String tmpName, String tmpPassword, String tmpEmail, String tmpStartDate, String tmpPosition){
+    public static boolean registerEmployee(int tmpID, String tmpName, String tmpPassword, String tmpEmail, String tmpStartDate, String tmpPosition){
         Scanner sc = new Scanner(System.in);
         String filePath = "EmployeeInfo.txt";
 
@@ -13,6 +13,8 @@ public class Register {
         
         Employee employee1 = new Employee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate);
         System.out.println(employee1);
+
+        boolean finish = false;
 
         try {
             // Create a FileWriter in append mode by passing true as the second parameter
@@ -28,7 +30,7 @@ public class Register {
             // Close the BufferedWriter to ensure all data is flushed to the file
             bufferedWriter.close();
 
-            System.out.println("Data has been appended to the file successfully.");
+            finish = true;
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
@@ -36,6 +38,8 @@ public class Register {
 
 
         sc.close();
+
+        return finish;
     }
 
 }

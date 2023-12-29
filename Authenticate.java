@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
 
 public class Authenticate {
 
@@ -119,10 +118,14 @@ public class Authenticate {
                     String tmpEmail = emailField.getText();
                     String tmpStartDate = startDateField.getText();
                     String tmpPosition = positionField.getText();
-                    Register.registerEmployee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate, tmpPosition);
-                    JOptionPane.showMessageDialog(frame, "Register button clicked in register panel");
+                    boolean register = Register.registerEmployee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate, tmpPosition);
+                    if (register){
+                        JOptionPane.showMessageDialog(frame, "User registration completed.");
+                    } else{
+                        JOptionPane.showMessageDialog(frame, "Error during registration. Please try again.");
+                    }
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(frame, "Invalid new username format. Please enter a valid integer.");
+                    JOptionPane.showMessageDialog(frame, "Wrong input data type. Please try again.");
                     idField.setText(""); // Clear the field
                     nameField.setText("");
                     passwordField.setText("");
@@ -178,13 +181,20 @@ public class Authenticate {
                     int tmpID = Integer.parseInt(idField.getText());
                     String tmpPassword = new String(passwordField.getPassword());
                     Employee tmpuser = new Employee(tmpID, tmpPassword);
-                    LogIn.loginUser(tmpuser);
+                    boolean login = LogIn.loginUser(tmpuser);
+                    if (login){
+
                     Authenticate.this.manager = LogIn.getManager(tmpuser);
                     Authenticate.this.seller = LogIn.getSeller(tmpuser);
-                    JOptionPane.showMessageDialog(frame, "Login button clicked in login panel");
+                    JOptionPane.showMessageDialog(frame, "Log in successful");
                     frame.dispose();
+                    }
+
+                    else{
+                        JOptionPane.showMessageDialog(frame, "Incorrect username or password");
+                    }
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(frame, "Invalid new username format. Please enter a valid integer.");
+                    JOptionPane.showMessageDialog(frame, "Wrong input data type. Please try again.");
                     idField.setText("");
                     passwordField.setText("");
                 }
