@@ -1,10 +1,7 @@
-
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Year;
-import java.util.Scanner;
 
 public class Employee {
     private int employeeID, startYear, workYear, currentYear;
@@ -93,7 +90,6 @@ public class Employee {
     }
 
     public static void addCustomer(int tmpCutomerID, String name, String phoneNumber){
-        Scanner sc = new Scanner(System.in);
         String customerPath = "Customer.txt";
 
         String WritingCustomer = tmpCutomerID +"/"+name+ "/" + phoneNumber;
@@ -120,8 +116,5 @@ public class Employee {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
         }
-
-
-        sc.close();
     }
 }

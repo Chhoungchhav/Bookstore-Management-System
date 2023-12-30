@@ -2,12 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Comparator;
 
 public class Customer {
     private int customerID, count;
-    private String name, phoneNumber;
     Customer(int customerID){
         this.customerID = customerID;
     }
@@ -17,12 +15,6 @@ public class Customer {
     }
     public int getCustomerID(){
         return customerID;
-    }
-    public String getCustomerName(){
-        return name;
-    }
-    public String getCustomerPhone(){
-        return phoneNumber;
     }
     public int getCustomerCount(){
         return count;
@@ -109,5 +101,11 @@ public class Customer {
             System.out.println("No regular customer found.");
         }
     }
+    @Override
+    public String toString() {
+        String s = "CustomerID: "+ this.customerID ;
+        return s;
+    }
+
     
 }

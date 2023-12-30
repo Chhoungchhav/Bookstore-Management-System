@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public  class Seller extends Employee{
     final String position = "seller";
@@ -57,7 +56,6 @@ public  class Seller extends Employee{
                 totalPrice = i.getSalePrice()*tmpQuantity;
             }
         }
-        Scanner sc = new Scanner(System.in);
         String filePath = "Purchase.txt";
         String WritingPurchase = tmpPurchaseID + "/" + tmpCustomerID + "/" + tmpSellerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
         
@@ -77,11 +75,11 @@ public  class Seller extends Employee{
 
             System.out.println("Data has been appended to the file successfully.");
             System.out.println("Purchase: "+tmpPurchaseID+", Customer: "+tmpCustomerID+", BookID: "+tmpBookID+", Quantity: "+ tmpQuantity+ ", TotalePrice: "+totalPrice+", Date: "+tmpPurchaseDate);
+
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
         }
-        sc.close();
     }
     
     static ArrayList<Integer> purchaseList = new ArrayList<Integer>();

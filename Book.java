@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Iterator;
 
 public class Book {
@@ -54,7 +53,7 @@ public class Book {
     }
 
     public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
-        Scanner sc = new Scanner(System.in);
+        // Scanner sc = new Scanner(System.in);
         String filePath = "Book.txt";
 
         String WritingContent = tmpBookID + "/" + tmpTitle + "/" + tmpSalePrice +"/" + tmpImportPrice + "/" + tmpImportDate;
@@ -83,7 +82,7 @@ public class Book {
         }
 
 
-        sc.close();
+        // sc.close();
     }
 
     static ArrayList<Book> bookList = new ArrayList<Book>();
