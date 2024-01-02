@@ -86,7 +86,7 @@ public class Customer {
                     .forEach(cid -> customer.increaseCount())
         );
     }
-    public static void checkRegularCustomer(){
+    public static int checkRegularCustomer(){
         getCustomerList();
         countingBook();
       
@@ -96,9 +96,9 @@ public class Customer {
 
         if (regularCustomer != null) {
             int regID = regularCustomer.getCustomerID();
-            System.out.println("Regular Customer ID: " + regID);
+            return regID;
         } else {
-            System.out.println("No regular customer found.");
+            return 0;
         }
     }
     @Override

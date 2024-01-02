@@ -89,14 +89,14 @@ public class Employee {
         return false;
     }
 
-    public static void addCustomer(int tmpCutomerID, String name, String phoneNumber){
+    public static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
         String customerPath = "Customer.txt";
 
         String WritingCustomer = tmpCutomerID +"/"+name+ "/" + phoneNumber;
         
         Customer customer1 = new Customer(tmpCutomerID);
         System.out.println(customer1);
-
+        boolean finish = false;
         try {
             // Create a FileWriter in append mode by passing true as the second parameter
             FileWriter fileWriter = new FileWriter(customerPath, true);
@@ -112,9 +112,11 @@ public class Employee {
             bufferedWriter.close();
 
             System.out.println("Data has been appended to the file successfully.");
+            finish = true;
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
         }
+        return finish;
     }
 }

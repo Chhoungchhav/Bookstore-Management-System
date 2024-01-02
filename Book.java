@@ -184,7 +184,7 @@ public class Book {
             );
     }
 
-    public static void checkPopularBook(){
+    public static int checkPopularBook(){
         getBookList();
         countingBook();
         Book popularBook = bookList1.stream()
@@ -192,9 +192,9 @@ public class Book {
             .orElse(null);
         if(popularBook!=null){
             int popBookID = popularBook.getBookID();
-            System.out.println("Popular book ID: " + popBookID);
+            return popBookID;
         } else {
-            System.out.println("No popular book found.");
+            return 0;
         }
     }
     @Override
