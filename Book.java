@@ -52,7 +52,7 @@ public class Book {
         this.bookCount = count;
     }
 
-    public static void addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
+    public static boolean addBook(int tmpBookID, String tmpTitle, double tmpSalePrice, double tmpImportPrice, String tmpImportDate){
         // Scanner sc = new Scanner(System.in);
         String filePath = "Book.txt";
 
@@ -60,7 +60,7 @@ public class Book {
         
         Book book1 = new Book(tmpBookID, tmpTitle, tmpSalePrice, tmpImportPrice, tmpImportDate);
         System.out.println(book1);
-
+        boolean added = false;
         try {
             // Create a FileWriter in append mode by passing true as the second parameter
             FileWriter fileWriter = new FileWriter(filePath, true);
@@ -76,12 +76,13 @@ public class Book {
             bufferedWriter.close();
 
             System.out.println("Data has been appended to the file successfully.");
+            added = true;
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
         }
 
-
+        return added;
         // sc.close();
     }
 
@@ -133,14 +134,7 @@ public class Book {
             }
           
         }
-
-        if(exist==true)
-        {
-            System.out.println("BookID already exist");
-            return true;
-        }
-
-        return false;
+        return exist;
     }
 
     public static boolean VerifyBookID2(int id)
@@ -161,7 +155,6 @@ public class Book {
 
         if(exist==false)
         {
-            System.out.println("BookID doesn't exist");
             return true;
         }
 

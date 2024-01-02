@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 abstract class Operation {
 
     private Scanner sc;
-    private static JFrame frame;
+    protected static JFrame frame;
 
     public Operation(Scanner scanner){
         this.sc = scanner;
@@ -36,11 +36,17 @@ abstract class Operation {
                     int tmpID = Integer.parseInt(idField.getText());
                     String tmpName = nameField.getText();
                     String tmpPhoneNumber = phoneNumberField.getText();
-                    boolean e1 = Employee.addCustomer(tmpID, tmpName, tmpPhoneNumber);
-                    if (e1){
-                        JOptionPane.showMessageDialog(frame, "User registration completed.");
-                    } else{
-                        JOptionPane.showMessageDialog(frame, "Error during registration. Please try again.");
+                    if (Customer.VerifyCustomerID(tmpID))
+                    {
+                        JOptionPane.showMessageDialog(frame, "Customer Already Existed");
+                    }
+                    else {
+                        boolean e1 = Employee.addCustomer(tmpID, tmpName, tmpPhoneNumber);
+                        if (e1){
+                            JOptionPane.showMessageDialog(frame, "Customer Added completed.");
+                        } else{
+                            JOptionPane.showMessageDialog(frame, "Error during addition. Please try again.");
+                        }
                     }
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(frame, "Wrong input data type. Please try again.");

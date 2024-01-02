@@ -51,8 +51,26 @@ public class Customer {
                 e.printStackTrace();
             }
     }
-    
+
     public static boolean VerifyCustomerID(int id)
+    {
+       
+        getCustomerList();        
+
+        boolean exist = false;
+        for(int i : customerList)
+        {
+            // System.out.println(i.getName());
+            if(i== id)
+            {
+                exist = true;
+            }
+          
+        }
+        return exist;
+    }
+    
+    public static boolean VerifyCustomerID2(int id)
     {
        
         getCustomerList();        

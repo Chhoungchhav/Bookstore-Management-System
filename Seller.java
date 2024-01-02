@@ -23,7 +23,7 @@ public  class Seller extends Employee{
     static ArrayList<Book> bookList = new ArrayList<Book>();
     static ArrayList<Book> bookList1 = new ArrayList<Book>();
 
-    public void addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpSellerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
+    public static Boolean addPurchase(int tmpPurchaseID,int tmpCustomerID, int tmpSellerID, int tmpBookID, int tmpQuantity, String tmpPurchaseDate){
         String bookPath = "Book.txt";
         double totalPrice = 0;
         try {
@@ -58,7 +58,7 @@ public  class Seller extends Employee{
         }
         String filePath = "Purchase.txt";
         String WritingPurchase = tmpPurchaseID + "/" + tmpCustomerID + "/" + tmpSellerID + "/" + tmpBookID +"/" + tmpQuantity + "/" + totalPrice + "/"+ tmpPurchaseDate;
-        
+        boolean added = false;
         try {
             // Create a FileWriter in append mode by passing true as the second parameter
             FileWriter fileWriter = new FileWriter(filePath, true);
@@ -75,11 +75,12 @@ public  class Seller extends Employee{
 
             System.out.println("Data has been appended to the file successfully.");
             System.out.println("Purchase: "+tmpPurchaseID+", Customer: "+tmpCustomerID+", BookID: "+tmpBookID+", Quantity: "+ tmpQuantity+ ", TotalePrice: "+totalPrice+", Date: "+tmpPurchaseDate);
-
+            added = true;
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
             e.printStackTrace();
         }
+        return added;
     }
     
     static ArrayList<Integer> purchaseList = new ArrayList<Integer>();

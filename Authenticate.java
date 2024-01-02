@@ -101,7 +101,7 @@ public class Authenticate {
         JPasswordField passwordField = new JPasswordField();
         JLabel emailLabel = new JLabel("Email:");
         JTextField emailField = new JTextField();
-        JLabel startDateLabel = new JLabel("Start Date:");
+        JLabel startDateLabel = new JLabel("Start Date(DD-MM-YYYY):");
         JTextField startDateField = new JTextField();
         JLabel positionLabel = new JLabel("Position:");
         JTextField positionField = new JTextField();

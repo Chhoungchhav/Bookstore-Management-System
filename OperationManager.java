@@ -10,7 +10,6 @@ public class OperationManager extends Operation{
     private Scanner sc;
 
     private Manager m1;
-    private static JFrame frame;
     
     public OperationManager(Scanner scanner, Manager manager){
         super(scanner);
@@ -22,8 +21,8 @@ public class OperationManager extends Operation{
     public void runOperation() {
         frame = new JFrame("Manager Operation");
 
-        JPanel panel1 = mainPanel();
-        JPanel panel2 = addCustomer();
+        JPanel panel1 = managerPanel();
+        JPanel panel2 = super.addCustomer();
         JPanel panel3 = popularBook();
         JPanel panel4 = regularCustomer();
         JPanel panel5 = checkSalary();
@@ -41,12 +40,6 @@ public class OperationManager extends Operation{
         frame.setVisible(true);
 
         waitForGUIClose();
-
-        // Assign values after the GUI is closed
-        this.sc = getScanner();
-        this.m1 = getManager();
-
-        
     }
 
     private void waitForGUIClose() {
@@ -60,15 +53,7 @@ public class OperationManager extends Operation{
         }
     }
 
-    public Scanner getScanner(){
-        return this.sc;
-    }
-
-    public Manager getManager(){
-        return this.m1;
-    }
-
-    private static JPanel mainPanel() {
+    private static JPanel managerPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
 
