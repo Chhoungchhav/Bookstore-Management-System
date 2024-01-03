@@ -14,11 +14,11 @@ public class start {
         s1 = authManager.getSeller();
         
         if (m1 != null){
-            OperationManager operation1 = new OperationManager(scanner, m1);
+            OperationManager operation1 = new OperationManager(m1);
             operation1.runOperation();
         }
         else if (s1 != null){
-            OperationSeller operation2 = new OperationSeller(scanner, s1);
+            OperationSeller operation2 = new OperationSeller(s1);
             operation2.runOperation();
         }
 

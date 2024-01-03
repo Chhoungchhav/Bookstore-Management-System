@@ -9,8 +9,7 @@ abstract class Operation {
     private Scanner sc;
     protected static JFrame frame;
 
-    public Operation(Scanner scanner){
-        this.sc = scanner;
+    public Operation(){
     }
 
     public abstract void runOperation();
