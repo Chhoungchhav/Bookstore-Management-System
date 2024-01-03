@@ -118,11 +118,16 @@ public class Authenticate {
                     String tmpEmail = emailField.getText();
                     String tmpStartDate = startDateField.getText();
                     String tmpPosition = positionField.getText();
-                    boolean register = Register.registerEmployee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate, tmpPosition);
-                    if (register){
-                        JOptionPane.showMessageDialog(frame, "User registration completed.");
-                    } else{
-                        JOptionPane.showMessageDialog(frame, "Error during registration. Please try again.");
+                    if(LogIn.VerifyEmployeeID(tmpID)){
+                        JOptionPane.showMessageDialog(frame, "User existed.");
+                    }
+                    else{
+                        boolean register = Register.registerEmployee(tmpID, tmpName, tmpPassword, tmpEmail, tmpStartDate, tmpPosition);
+                        if (register){
+                            JOptionPane.showMessageDialog(frame, "User registration completed.");
+                        } else{
+                            JOptionPane.showMessageDialog(frame, "Error during registration. Please try again.");
+                        }
                     }
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(frame, "Wrong input data type. Please try again.");

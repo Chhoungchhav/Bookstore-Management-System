@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -47,9 +47,10 @@ public class OperationSeller extends Operation{
         }
     }
 
-    private static JPanel sellerPanel() {
+    private JPanel sellerPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
+        panel.setLayout(new GridLayout(0, 1));
+        JLabel welcome = new JLabel("Welcome, " + s1.getName());
 
         JButton addBookButton = new JButton("Add Book");
         JButton addPurchaseButton = new JButton("Add Purchase");
@@ -96,8 +97,8 @@ public class OperationSeller extends Operation{
                 frame.dispose();
             }
         });
-
-
+    
+        panel.add(welcome);
         panel.add(addBookButton);
         panel.add(addPurchaseButton);
         panel.add(addCustomerButton);
@@ -210,15 +211,15 @@ public class OperationSeller extends Operation{
                     int tmpQuantity = Integer.parseInt(quantityField.getText());
                     String tmpPurchaseDate = purchaseDateField.getText();
                     if (Seller.VerifyPurchaseID(tmpID)){
-                        JOptionPane.showMessageDialog(frame, "Purchase already exist.");
+                        JOptionPane.showMessageDialog(frame, "Purchase ID already exist.");
                     }
                     else{
                         if (Book.VerifyBookID2(tmpBookID)){
-                                JOptionPane.showMessageDialog(frame, "Book not exist.");
+                                JOptionPane.showMessageDialog(frame, "Book ID not exist.");
                         }
                         else{
                             if(Customer.VerifyCustomerID2(tmpcID)){
-                                JOptionPane.showMessageDialog(frame, "Customer not exist.");
+                                JOptionPane.showMessageDialog(frame, "Customer ID not exist.");
                             }
                             else{
                                 boolean purchase1 = Seller.addPurchase(tmpID, tmpcID, tmpeID, tmpBookID, tmpQuantity, tmpPurchaseDate);

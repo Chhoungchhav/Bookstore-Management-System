@@ -88,7 +88,6 @@ public class Customer {
 
         if(exist==false)
         {
-            System.out.println("CustomerID doesn't exist");
             return true;
         }
 

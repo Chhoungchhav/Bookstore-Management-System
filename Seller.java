@@ -73,8 +73,6 @@ public  class Seller extends Employee{
             // Close the BufferedWriter to ensure all data is flushed to the file
             bufferedWriter.close();
 
-            System.out.println("Data has been appended to the file successfully.");
-            System.out.println("Purchase: "+tmpPurchaseID+", Customer: "+tmpCustomerID+", BookID: "+tmpBookID+", Quantity: "+ tmpQuantity+ ", TotalePrice: "+totalPrice+", Date: "+tmpPurchaseDate);
             added = true;
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to
@@ -132,7 +130,6 @@ public  class Seller extends Employee{
 
         if(exist==true)
         {
-            System.out.println("PurchaseID already exist");
             return true;
         }
 

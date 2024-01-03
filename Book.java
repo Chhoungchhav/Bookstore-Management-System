@@ -75,7 +75,6 @@ public class Book {
             // Close the BufferedWriter to ensure all data is flushed to the file
             bufferedWriter.close();
 
-            System.out.println("Data has been appended to the file successfully.");
             added = true;
         } catch (IOException e) {
             // Handle IO exceptions, e.g., if the file cannot be created or written to

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 abstract class Operation {
 
-    private Scanner sc;
     protected static JFrame frame;
 
     public Operation(){
@@ -37,7 +36,7 @@ abstract class Operation {
                     String tmpPhoneNumber = phoneNumberField.getText();
                     if (Customer.VerifyCustomerID(tmpID))
                     {
-                        JOptionPane.showMessageDialog(frame, "Customer Already Existed");
+                        JOptionPane.showMessageDialog(frame, "Customer ID Already Existed");
                     }
                     else {
                         boolean e1 = Employee.addCustomer(tmpID, tmpName, tmpPhoneNumber);

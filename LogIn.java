@@ -65,7 +65,6 @@ public class LogIn {
 
         if(exist==true)
         {
-            System.out.println("Employee ID exist");
             return true;
         }
 

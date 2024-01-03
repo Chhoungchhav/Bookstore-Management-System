@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,23 +35,13 @@ public class OperationManager extends Operation{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        waitForGUIClose();
     }
 
-    private void waitForGUIClose() {
-        // Wait for the frame to be closed
-        while (frame.isVisible()) {
-            try {
-                Thread.sleep(100); // Sleep for a short duration
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
-    private static JPanel managerPanel() {
+    private JPanel managerPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
+        panel.setLayout(new GridLayout(0, 1));
+        JLabel welcome = new JLabel("Welcome, " + m1.getName());
 
         JButton addCustomerButton = new JButton("Add Customer");
         JButton popularBookButton = new JButton("Check Popular Book");
@@ -99,7 +89,7 @@ public class OperationManager extends Operation{
             }
         });
 
-
+        panel.add(welcome);
         panel.add(addCustomerButton);
         panel.add(popularBookButton);
         panel.add(regularCustomerButton);

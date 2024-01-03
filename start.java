@@ -1,11 +1,9 @@
 
-import java.util.Scanner;
 
 public class start {
     public static void main(String[] args) {
         Manager m1 = null;
         Seller s1 = null;
-        Scanner scanner = new Scanner(System.in);
         
         Authenticate authManager = new Authenticate();
         authManager.runAuthenticationSystem();
@@ -21,7 +19,5 @@ public class start {
             OperationSeller operation2 = new OperationSeller(s1);
             operation2.runOperation();
         }
-
-        scanner.close();
     }
 }
