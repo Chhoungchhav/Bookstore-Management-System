@@ -33,4 +33,8 @@ We have 4 .txt files:
 - Customer: to store customerID, name, phone number
 - Employee: to store employeeID, name, password, email, start date, position
 - Purchase: to store purchaseID, customerID, sellerID, bookID, quantity, total price, purchase date
-  
+
+Lambda Expression:
+
+Static method:
+
