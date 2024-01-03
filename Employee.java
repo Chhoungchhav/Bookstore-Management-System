@@ -89,7 +89,7 @@ public class Employee {
         return false;
     }
 
-    public static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
+    protected static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
         String customerPath = "Customer.txt";
 
         String WritingCustomer = tmpCutomerID +"/"+name+ "/" + phoneNumber;
