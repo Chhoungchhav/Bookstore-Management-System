@@ -45,6 +45,25 @@ Inheritance is employed to create a hierarchy of classes. We have 2 Super classe
 - **OperationManager** and **OperationSeller** are also **sub-classes** extended from the **Operation**. 
 
 ### Polymorphism
+Polymorphism is implemented through method overloading and overriding.<br/>
+**Overloading:**
+- In **Employee.java** both constructors showcasing the flexibility provided by constructor overloading.<br/>
+  Store the Employee detail<br/>
+
+      public Employee(int employeeID, String name, String password, String emailAddress, String startDate)
+  Store the Login detail of Employee<br/>
+
+      public Employee(int employeeID, String password)
+- Similarly in **Book.java** There is also  overloading constructor. <br/>
+  Store the Book detail<br/>
+
+      public Book(int bookID, String title, double salePrice, double importPrice, String importDate)
+  Store the Amount of Book Purchase<br/>
+
+      public Book(int bookID, int bookCount)
+
+**Override:**
+The **"@Override"** annotation in Java is used to indicate that a method in a subclass is intended to override a method of the superclass. Overriding allows a subclass to provide a specific implementation of a method that is already provided by its superclass.
 
 ### Abstraction
 We have 1 abstract class, which is Operation. It has the abstract method runOperation, and a protected method addCustomer.
