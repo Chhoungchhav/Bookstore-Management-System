@@ -3,6 +3,17 @@ The Bookstore Management System keeps you in the loop with real-time updates on 
 
 Classes & Objects:
 We have in total of 11 classes:
+- Authenticate
+- Book
+- Customer
+- Employee
+- LogIn
+- Manager
+- Operation
+- OperationManager
+- OperationSeller
+- Register
+- Seller
 
 Inheritance:
 We have 2 Super classes:
