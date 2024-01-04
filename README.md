@@ -3,7 +3,10 @@
 ## Introduction
 The Bookstore Management System keeps you in the loop with real-time updates on purchases and supplies. It helps with tasks like finding popular books, recognizing regular customers, and keeping track of sales and profits.
 ## Features
-**1. Manager**<br/>
+**1. Authentication**<br/>
+- Log in
+- Register
+**2. Manager**<br/>
 
   Add Customer
 
@@ -13,7 +16,7 @@ The Bookstore Management System keeps you in the loop with real-time updates on 
 
   Check Salary
 
-**2. Seller**<br/>
+**3. Seller**<br/>
 
   Add Purchase
 
