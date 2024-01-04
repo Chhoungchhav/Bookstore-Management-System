@@ -102,7 +102,7 @@ public class OperationManager extends Operation{
     private JPanel popularBook() {
 
         JPanel panel = new JPanel();
-        JLabel label = new JLabel("Popular Book has book ID: " + Book.checkPopularBook());
+        JLabel label = new JLabel(Book.checkPopularBook());
         panel.setLayout(new GridLayout(0, 1));
         JButton backButton = new JButton("Back");
 

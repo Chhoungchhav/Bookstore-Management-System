@@ -176,7 +176,7 @@ public class Book {
             );
     }
 
-    public static int checkPopularBook(){
+    public static String checkPopularBook(){
         getBookList();
         countingBook();
         Book popularBook = bookList1.stream()
@@ -184,10 +184,16 @@ public class Book {
             .orElse(null);
         if(popularBook!=null){
             int popBookID = popularBook.getBookID();
-            return popBookID;
-        } else {
-            return 0;
-        }
+            for(Book i : bookList)
+            {
+                if(i.getBookID() == popBookID)
+                {
+                    String s ="Popular Book has book ID: " + popBookID + ", Title: " + i.getBookTitle();
+                    return s;
+                }
+            }
+        } 
+        return "null";
     }
     @Override
     public String toString() {
