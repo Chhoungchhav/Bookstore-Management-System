@@ -24,17 +24,17 @@ The Bookstore Management System keeps you in the loop with real-time updates on 
 ### Classes & Objects
 
 We have a total of 11 classes:
-- Authenticate
+- Authenticate: Run log in and regsiter 
 - Book
 - Customer
 - Employee
-- Login
+- Login: Logging employee in and verify existing employee ID
 - Manager
 - Operation
-- OperationManager
-- OperationSeller
-- Register
-- Seller
+- OperationManager: Includes all the function that manager can perform
+- OperationSeller: Includes all the function that seller can perform
+- Register: Register new employee
+- Seller: 
 
 ### Inheritance
 
