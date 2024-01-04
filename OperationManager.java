@@ -102,8 +102,8 @@ public class OperationManager extends Operation{
     private JPanel popularBook() {
 
         JPanel panel = new JPanel();
-        JLabel label = new JLabel("Popular Book is " + Book.checkPopularBook());
-        panel.setLayout(new GridLayout(0, 2));
+        JLabel label = new JLabel("Popular Book has book ID: " + Book.checkPopularBook());
+        panel.setLayout(new GridLayout(0, 1));
         JButton backButton = new JButton("Back");
 
         backButton.addActionListener(new ActionListener() {
@@ -124,7 +124,7 @@ public class OperationManager extends Operation{
 
         JPanel panel = new JPanel();
         JLabel label = new JLabel("Your Salary is " + m1.getSalary());
-        panel.setLayout(new GridLayout(0, 2));
+        panel.setLayout(new GridLayout(0, 1));
         JButton backButton = new JButton("Back");
 
         backButton.addActionListener(new ActionListener() {
@@ -144,8 +144,8 @@ public class OperationManager extends Operation{
     private JPanel regularCustomer() {
 
         JPanel panel = new JPanel();
-        JLabel label = new JLabel("The regular customer is " + Customer.checkRegularCustomer());
-        panel.setLayout(new GridLayout(0, 2));
+        JLabel label = new JLabel("The regular customer has the customer ID:  " + Customer.checkRegularCustomer());
+        panel.setLayout(new GridLayout(0, 1));
         JButton backButton = new JButton("Back");
 
         backButton.addActionListener(new ActionListener() {
