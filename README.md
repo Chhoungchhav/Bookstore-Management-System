@@ -6,25 +6,18 @@ The Bookstore Management System keeps you in the loop with real-time updates on 
 **1. Authentication**<br/>
 - Log in
 - Register
+
 **2. Manager**<br/>
-
-  Add Customer
-
-  Check Popular Books
-
-  Check Regular Customers
-
-  Check Salary
+  - Add Customer
+  - Check Popular Books
+  - Check Regular Customers
+  - Check Salary
 
 **3. Seller**<br/>
-
-  Add Purchase
-
-  Add Book
-
-  Add Customer
-
-  Check Salary<br/>
+- Add Purchase
+- Add Book
+- Add Customer
+- Check Salary<br/>
 
 ## Object-Oriented Features
 
