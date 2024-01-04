@@ -271,7 +271,7 @@ public class OperationSeller extends Operation{
 
         JPanel panel = new JPanel();
         JLabel label = new JLabel("Your Salary is " + s1.getSalary());
-        panel.setLayout(new GridLayout(0, 2));
+        panel.setLayout(new GridLayout(0, 1));
         JButton backButton = new JButton("Back");
 
         backButton.addActionListener(new ActionListener() {

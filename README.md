@@ -3,42 +3,38 @@
 ## Introduction
 The Bookstore Management System keeps you in the loop with real-time updates on purchases and supplies. It helps with tasks like finding popular books, recognizing regular customers, and keeping track of sales and profits.
 ## Features
-**1. Manager**<br/>
+**1. Authentication**<br/>
+- Log in
+- Register
 
-  Add Customer
+**2. Manager**<br/>
+  - Add Customer
+  - Check Popular Books
+  - Check Regular Customers
+  - Check Salary
 
-  Check Popular Books
-
-  Check Regular Customers
-
-  Check Salary
-
-**2. Seller**<br/>
-
-  Add Purchase
-
-  Add Book
-
-  Add Customer
-
-  Check Salary<br/>
+**3. Seller**<br/>
+- Add Purchase
+- Add Book
+- Add Customer
+- Check Salary<br/>
 
 ## Object-Oriented Features
 
 ### Classes & Objects
 
 We have a total of 11 classes:
-- Authenticate
-- Book
-- Customer
-- Employee
-- Login
-- Manager
-- Operation
-- OperationManager
-- OperationSeller
-- Register
-- Seller
+- Authenticate: Run log in and register 
+- Book: creating a book list, storing the data for book, and verify the book
+- Customer: identifying the customer and store the customer
+- Employee: cast to manager or seller 
+- Login: Logging employee in and verify existing employee ID
+- Manager: identifying the user to be a manager
+- Operation: manager the operation to the manager or seller
+- OperationManager: Includes all the functions that the manager can perform
+- OperationSeller: Includes all the functions that the seller can perform
+- Register: Register new employee
+- Seller: identity the seller, add purchase info, and verify the purchase 
 
 ### Inheritance
 
