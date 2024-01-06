@@ -72,7 +72,11 @@ The **"@Override"** annotation in Java is used to indicate that a method in a su
 
 ### Encapsulation
 
--**public**: Can be accessed from any part within the same program which almost has in the **Book.java**, **Customer.java**, **Register.java**, and **Login.java**.
+-**public**: Can be accessed from any other class or package. We use public on methods so that it can be use in other classes.
+
+    public int getEmployeeID(){
+        return employeeID;
+    }
 
 -**private**: Can only be accessible within the same class and not visible to subclasses or other classes. We use private on every field to ensure their the value can only be changed inside that class and cannot be modified by any external classes.
 
@@ -80,7 +84,7 @@ The **"@Override"** annotation in Java is used to indicate that a method in a su
     private String title;
     private double salePrice, importPrice;
 
-We also use private on some method as well:
+We also use private on some methods as well:
 
     private JPanel registerUser() {
 
