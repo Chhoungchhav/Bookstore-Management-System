@@ -40,7 +40,9 @@ We have a total of 11 classes:
 
 Inheritance is employed to create a hierarchy of classes. We have 2 Super classes:
 - **Employee** serves as **SuperClass**, while both **Manager** class and **Seller** class are **sub-classes** that inherit the constructor of **Employee**.
+In this case, we use inheritance for better code structure as seller and manager are both Employee. It is also for code reusability such as the getSalary method, and for specialization because even if seller and manager are both employee, they have different salary, and different function available to them.
 - **OperationManager** and **OperationSeller** are also **sub-classes** extended from the **Operation**. 
+We use inheritance for this because it can provide reusable code for addCustomer method, as both the operationManager and operationSeller need it.
 
 ### Polymorphism
 Polymorphism is implemented through method overloading and overriding.<br/>
