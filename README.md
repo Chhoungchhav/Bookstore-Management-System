@@ -47,6 +47,7 @@ We use inheritance for this because it can provide reusable code for addCustomer
 ### Polymorphism
 
 **Casting**
+
     Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
     mList.add((Manager)tmp2);
     
