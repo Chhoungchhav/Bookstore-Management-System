@@ -84,7 +84,7 @@ We have 1 abstract class that is implemented in **Operation.java** and used to e
 
 ### Exception Handling
 Exception handling is incorporated to gracefully manage unexpected errors. This ensures the system can recover or gracefully terminate, we implement this to ensure the **file is not found** issue and the **mistype input** issue by using **'try'** and **'catch'**
-- **file is not found**: We use the try and catch IOException to check whether the file that we need to open exist.
+- **file is not found**: We use the try and catch IOException to check whether the file that we need to open exist.<br/>
 try {
     // Create a FileWriter in append mode by passing true as the second parameter
     FileWriter fileWriter = new FileWriter(filePath, true);
@@ -104,7 +104,7 @@ try {
     // Handle IO exceptions, e.g., if the file cannot be created or written to
     e.printStackTrace();
 }
-- **mistype input**: We use try and catch NumberFormatException to check whether the user input the correct type of data format
+- **mistype input**: We use try and catch NumberFormatException to check whether the user input the correct type of data format<br/>
 try {
     int tmpID = Integer.parseInt(idField.getText());
     String tmpName = nameField.getText();
