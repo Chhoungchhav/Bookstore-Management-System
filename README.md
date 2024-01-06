@@ -45,6 +45,11 @@ In this case, we use inheritance for better code structure as seller and manager
 We use inheritance for this because it can provide reusable code for addCustomer method, as both the operationManager and operationSeller need it.
 
 ### Polymorphism
+
+**Casting**
+    Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+    mList.add((Manager)tmp2);
+    
 Polymorphism is implemented through method overloading and overriding.<br/>
 **Overloading**
 - In **Employee.java** both constructors showcasing the flexibility provided by constructor overloading.<br/>
