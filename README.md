@@ -76,7 +76,14 @@ The **"@Override"** annotation in Java is used to indicate that a method in a su
 
 -**private**: Can only be accessible within the same class and not visible to subclasses or other classes and can be found in **Manager.java**, **Seller.java**, **OperationManager.java**, **OperationSeller.java**, and **Authentication.java**.
 
--**protected**: Can be accessible within the same class, its subclasses, **Operation.java** and **Employee.java** have this modifier.
+-**protected**: Can be accessible within its own package and by subclasses, whether they are in the same package or not.</br>
+We use it inmethod in **Operation.java**
+
+      protected JPanel addCustomer() {
+
+and **Employee.java**
+
+      protected static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
 
 ### Abstraction
 
