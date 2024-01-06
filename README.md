@@ -80,9 +80,11 @@ The **"@Override"** annotation in Java is used to indicate that a method in a su
 
 ### Abstraction
 
-We have 1 abstract class that is implemented in **Operation.java** and 1 abstract method:
+We have 1 abstract class that is implemented in **Operation.java**
 
-    abstract class Operation {</br>
+    abstract class Operation {
+
+and 1 abstract method:
 
     public abstract void runOperation();
 
