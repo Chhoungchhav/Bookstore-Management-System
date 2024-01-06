@@ -47,6 +47,7 @@ We use inheritance for this because it can provide reusable code for addCustomer
 ### Polymorphism
 
 **Casting**
+
 We create manager as an employee first before casting it into manager because at the start, we only know that the user is employee, and after we get the position, we can cast them to specific class.
 
     Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
