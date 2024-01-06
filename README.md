@@ -93,25 +93,25 @@ We use abstract class because we want to prevent the creation of the object for 
 Exception handling is incorporated to gracefully manage unexpected errors. This ensures the system can recover or gracefully terminate, we implement this to ensure the **file is not found** issue and the **mistype input** issue by using **'try'** and **'catch'**
 - **file is not found**: We use the try and catch IOException to check whether the file that we need to open exist.<br/>
 
-    try {
-        // Create a FileWriter in append mode by passing true as the second parameter
-        FileWriter fileWriter = new FileWriter(filePath, true);
-    
-        // Wrap the FileWriter in a BufferedWriter for efficient writing
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-    
-        // Append the data to the file
-        bufferedWriter.write(WritingContent);
-        bufferedWriter.newLine(); // Add a new line for clarity
-    
-        // Close the BufferedWriter to ensure all data is flushed to the file
-        bufferedWriter.close();
-    
-        finish = true;
-    } catch (IOException e) {
-        // Handle IO exceptions, e.g., if the file cannot be created or written to
-        e.printStackTrace();
-    }
+      try {
+          // Create a FileWriter in append mode by passing true as the second parameter
+          FileWriter fileWriter = new FileWriter(filePath, true);
+      
+          // Wrap the FileWriter in a BufferedWriter for efficient writing
+          BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+      
+          // Append the data to the file
+          bufferedWriter.write(WritingContent);
+          bufferedWriter.newLine(); // Add a new line for clarity
+      
+          // Close the BufferedWriter to ensure all data is flushed to the file
+          bufferedWriter.close();
+      
+          finish = true;
+      } catch (IOException e) {
+          // Handle IO exceptions, e.g., if the file cannot be created or written to
+          e.printStackTrace();
+      }
   
 - **mistype input**: We use try and catch NumberFormatException to check whether the user input the correct type of data format<br/>
 
