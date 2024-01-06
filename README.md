@@ -108,28 +108,28 @@ Exception handling is incorporated to gracefully manage unexpected errors. This 
   
 - **mistype input**: We use try and catch NumberFormatException to check whether the user input the correct type of data format<br/>
 
-    try {
-        int tmpID = Integer.parseInt(idField.getText());
-        String tmpName = nameField.getText();
-        String tmpPhoneNumber = phoneNumberField.getText();
-        if (Customer.VerifyCustomerID(tmpID))
-        {
-            JOptionPane.showMessageDialog(frame, "Customer ID Already Existed");
-        }
-        else {
-            boolean e1 = Employee.addCustomer(tmpID, tmpName, tmpPhoneNumber);
-            if (e1){
-                JOptionPane.showMessageDialog(frame, "Customer Added completed.");
-            } else{
-                JOptionPane.showMessageDialog(frame, "Error during addition. Please try again.");
-            }
-        }
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(frame, "Wrong input data type. Please try again.");
-        idField.setText(""); // Clear the field
-        nameField.setText("");
-        phoneNumberField.setText("");
-    }
+      try {
+          int tmpID = Integer.parseInt(idField.getText());
+          String tmpName = nameField.getText();
+          String tmpPhoneNumber = phoneNumberField.getText();
+          if (Customer.VerifyCustomerID(tmpID))
+          {
+              JOptionPane.showMessageDialog(frame, "Customer ID Already Existed");
+          }
+          else {
+              boolean e1 = Employee.addCustomer(tmpID, tmpName, tmpPhoneNumber);
+              if (e1){
+                  JOptionPane.showMessageDialog(frame, "Customer Added completed.");
+              } else{
+                  JOptionPane.showMessageDialog(frame, "Error during addition. Please try again.");
+              }
+          }
+      } catch (NumberFormatException ex) {
+          JOptionPane.showMessageDialog(frame, "Wrong input data type. Please try again.");
+          idField.setText(""); // Clear the field
+          nameField.setText("");
+          phoneNumberField.setText("");
+      }
 
 
 ### File I/O
