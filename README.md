@@ -79,11 +79,11 @@ The **"@Override"** annotation in Java is used to indicate that a method in a su
 -**protected**: Can be accessible within its own package and by subclasses, whether they are in the same package or not.</br>
 We use it inmethod in **Operation.java**
 
-      protected JPanel addCustomer() {
+    protected JPanel addCustomer() {
 
 and **Employee.java**
 
-      protected static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
+    protected static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
 
 ### Abstraction
 
