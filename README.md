@@ -190,3 +190,5 @@ Lambda expressions enhance the system's flexibility and conciseness. We also imp
 ### Static method
 **'static'** method we use to access the class without creating an instance of the class. In the project, we use **21** static methods.
 
+    public static Manager getManager(Employee loginUser)
+    public static Seller getSeller(Employee loginUser)
