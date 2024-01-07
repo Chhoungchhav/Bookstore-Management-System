@@ -76,6 +76,14 @@ Polymorphism is implemented through method overloading and overriding.<br/>
 
 The **"@Override"** annotation in Java is used to indicate that a method in a subclass is intended to override a method of the superclass. Overriding allows a subclass to provide a specific implementation of a method that is already provided by its superclass.
 - In **Manager.java**, **Seller.java**, and **Employee.java**, as **Manager** and **Seller** are sub-classes to **Employee** the **@Override** allows the **Manager** and **Seller** can override and provide a custom representation of an object.
+
+      @Override
+          public String toString() {
+              String tmp = super.toString() + ", position: " + this.position;
+      
+              return tmp;
+          }
+
 - Same as before the **Operation.java**, **OperationSeller.java**, and **OperationManager.java** also have the **@Override** annotation to override the object in **OperationSeller** and **OperationManager**.
 
 ### Encapsulation
