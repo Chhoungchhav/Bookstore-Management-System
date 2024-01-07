@@ -86,6 +86,9 @@ The **"@Override"** annotation in Java is used to indicate that a method in a su
 
 - Same as before the **Operation.java**, **OperationSeller.java**, and **OperationManager.java** also have the **@Override** annotation to override the object in **OperationSeller** and **OperationManager**.
 
+      @Override
+      public void runOperation()
+
 ### Encapsulation
 
 -**public**: Can be accessed from any other class or package. We use public on methods so that it can be use in other classes.
