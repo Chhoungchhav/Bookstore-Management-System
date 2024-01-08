@@ -160,6 +160,8 @@ We have 4 files:
 - **EmployeeInfo.txt:** to store employeeID, name, password, email, start date, position
 - **Purchase.txt:** to store purchaseID, customerID, sellerID, bookID, quantity, total price, purchase date
 
+We use this 4 files separately because we want each file to store specific data, so that it won't create any issue when we read it.
+
 ### Lambda Expression
 Lambda expressions enhance the system's flexibility and conciseness. We also implement **'filter'** and **'max'**.
 - **'filter'** is a function we use to simplify the process of selecting elements that meet certain criteria.
