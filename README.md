@@ -174,7 +174,7 @@ Lambda expressions enhance the system's flexibility and conciseness. We also imp
               .orElse(null);
 
 ### Static method
-**'static'** method we use to access the class without creating an instance of the class. In the project, we use **21** static methods. 
+**'static'** method we use to access the class without creating an instance of the class. In the project, we use **21** static methods. We use the static method is for an easy way to call out the function in other class and also call in within class.
 
     public static Manager getManager(Employee loginUser)
     public static Seller getSeller(Employee loginUser)
