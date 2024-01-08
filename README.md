@@ -162,12 +162,12 @@ We have 4 files:
 - **EmployeeInfo.txt:** to store employeeID, name, password, email, start date, position
 - **Purchase.txt:** to store purchaseID, customerID, sellerID, bookID, quantity, total price, purchase date
 
-We use this 4 files separately because we want each file to store specific data, so that it won't create any issue when we read it.
+We use these 4 files separately because we want each file to store specific data, so that it won't create any issue when we read it.
 
 ### Lambda Expression
 Lambda expressions enhance the system's flexibility and conciseness. We also implement **'filter'** and **'max'**.
-- **'filter'** is a function we use to simplify the process of selecting elements that meet certain criteria. In this project, we use the **filter** operation to find a specific book in the list of book purchases made by a seller.
-- We use the function **'max'** to find the maximum element in a collection. In the case on Book.java, we use the **max** operation to find the maximum element of the **bookList1** stream which compares the books based on their counts **(Book::getBookCount)**
+- **'filter'** is a function we use to simplify the process of selecting elements that meet certain criteria. For a certain reason, **filter** can help narrow down the elements in a stream based on a specific condition. In this project, we use the **filter** operation to find a specific book in the list of book purchases a seller makes.
+- We use the function **'max'** to find the maximum element in a collection. Using the **max** operation is more more readable and expressive when the intention is to find the maximum element based on a specific property. In the case of Book.java, we use the **max** operation to find the maximum element of the **bookList1** stream which compares the books based on their counts **(Book::getBookCount)**
 
       Book popularBook = bookList1.stream()
               .max(Comparator.comparingInt(Book::getBookCount))
