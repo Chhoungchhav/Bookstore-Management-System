@@ -96,12 +96,14 @@ We use protected for this 2 methods because we only want those methods to be cal
 We have 1 abstract class that is implemented in **Operation.java**
 
     abstract class Operation {
+    
+We use abstract class because we want to prevent the creation of the object for Operation class as we do not need them. We use abstract class instead of interface because we need this class to include both concrete and abstract method.
 
 and 1 abstract method:
 
     public abstract void runOperation();
 
-We use abstract class because we want to prevent the creation of the object for Operation class as we do not need them. We create the abstract method to ensure the implementation of that method in each subclass
+We create the abstract method to ensure the implementation of that method in each subclass
 ### Exception Handling
 Exception handling is incorporated to gracefully manage unexpected errors. This ensures the system can recover or gracefully terminate, we implement this to ensure the **file is not found** issue and the **mistype input** issue by using **'try'** and **'catch'**
 - **file is not found**: We use the try and catch IOException to check whether the file that we need to open exist.<br/>
