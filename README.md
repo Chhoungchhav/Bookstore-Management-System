@@ -52,6 +52,8 @@ We create manager as an employee first before casting it into manager because at
 
     Employee tmp2 = new Manager(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
     mList.add((Manager)tmp2);
+
+We cast the employee into manager so that it can access specific methods that only available in Manger class and not available in the superclass, employee.
     
 
 ### Encapsulation
@@ -62,24 +64,32 @@ We create manager as an employee first before casting it into manager because at
         return employeeID;
     }
 
+We use public for any method that doesn't have any restriction and can be called from anywhere without causing any problems. 
+
 -**private**: Can only be accessible within the same class and not visible to subclasses or other classes. We use private on every field to ensure their the value can only be changed inside that class and cannot be modified by any external classes.
 
     private int bookID, bookCount;
     private String title;
     private double salePrice, importPrice;
+    
+We use private on these fields because these fields are the properties of the class, so we only want their value to be modified from within the class and not allowed any external inteference.
 
 We also use private on some methods as well:
 
     private JPanel registerUser() {
 
+We use private on this method because it is exclusive to the class it is in and we do not want any other class to access it.
+
 -**protected**: Can be accessible within its own package and by subclasses, whether they are in the same package or not.</br>
-We use it inmethod in **Operation.java**
+We use it in method in **Operation.java**
 
     protected JPanel addCustomer() {
 
 and **Employee.java**
 
     protected static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
+
+We use protected for this 2 methods because we only want those methods to be called from class in the same package or subclass, and prevent it from being called from outside classes.
 
 ### Abstraction
 
