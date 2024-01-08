@@ -166,11 +166,15 @@ We use this 4 files separately because we want each file to store specific data,
 
 ### Lambda Expression
 Lambda expressions enhance the system's flexibility and conciseness. We also implement **'filter'** and **'max'**.
-- **'filter'** is a function we use to simplify the process of selecting elements that meet certain criteria.
-- We use the function **'max'** to find the maximum element in a collection
+- **'filter'** is a function we use to simplify the process of selecting elements that meet certain criteria. In this project, we use the **filter** operation to find a specific book in the list of book purchases made by a seller.
+- We use the function **'max'** to find the maximum element in a collection. In the case on Book.java, we use the **max** operation to find the maximum element of the **bookList1** stream which compares the books based on their counts **(Book::getBookCount)**
+
+      Book popularBook = bookList1.stream()
+              .max(Comparator.comparingInt(Book::getBookCount))
+              .orElse(null);
 
 ### Static method
-**'static'** method we use to access the class without creating an instance of the class. In the project, we use **21** static methods.
+**'static'** method we use to access the class without creating an instance of the class. In the project, we use **21** static methods. 
 
     public static Manager getManager(Employee loginUser)
     public static Seller getSeller(Employee loginUser)
