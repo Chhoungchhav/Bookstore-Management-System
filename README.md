@@ -178,3 +178,5 @@ Lambda expressions enhance the system's flexibility and conciseness. We also imp
 
     public static Manager getManager(Employee loginUser)
     public static Seller getSeller(Employee loginUser)
+
+The getManager function use as a static method to provide a function which it not associated with login object and make an instance of different class
