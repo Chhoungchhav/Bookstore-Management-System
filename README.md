@@ -103,7 +103,7 @@ and 1 abstract method:
 
     public abstract void runOperation();
 
-We create the abstract method to ensure the implementation of that method in each subclass
+We create the abstract method to ensure the implementation of that method in each subclass. We use abstract method instead of interface because we only want to use that method in the subclasses of Operation class.
 ### Exception Handling
 Exception handling is incorporated to gracefully manage unexpected errors. This ensures the system can recover or gracefully terminate, we implement this to ensure the **file is not found** issue and the **mistype input** issue by using **'try'** and **'catch'**
 - **file is not found**: We use the try and catch IOException to check whether the file that we need to open exist.<br/>
