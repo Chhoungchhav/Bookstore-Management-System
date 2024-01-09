@@ -89,7 +89,7 @@ and **Employee.java**
 
     protected static boolean addCustomer(int tmpCutomerID, String name, String phoneNumber){
 
-We use protected for this 2 methods because we only want those methods to be called from class in the same package or subclass, and prevent it from being called from outside classes.
+We use protected for this 2 methods because we only want those methods to be called from class in the same package or subclass, and prevent it from being called from outside classes. We use it on addcustomer because the operation super class which it allow the subclass can able to access it as well
 
 ### Abstraction
 
