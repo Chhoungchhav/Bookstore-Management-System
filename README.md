@@ -72,7 +72,7 @@ We use public for the getEmployeeID() method because we need to use this method 
     private String title;
     private double salePrice, importPrice;
     
-We use private on these fields because these fields are the properties of the class, so we only want their value to be modified from within the class and not allowed any external inteference.
+We use private on these fields because these fields are the properties of the class, so we only want their value to be modified from within the class and not allowed any external inteference. For instance, the bookID and bookCount should only be modified through methods within the class to maintain accuracy.
 
 We also use private on some methods as well:
 
