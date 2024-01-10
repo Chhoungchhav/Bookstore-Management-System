@@ -64,7 +64,7 @@ We cast the employee into manager so that it can access specific methods that on
         return employeeID;
     }
 
-We use public for any method that doesn't have any restriction and can be called from anywhere without causing any problems. 
+We use public for the getEmployeeID() method because we need to use this method in other classes. Everywhere that we create the object employee that can be an admin or a seller, they should be able to call this function to get their id. 
 
 -**private**: Can only be accessible within the same class and not visible to subclasses or other classes. We use private on every field to ensure their the value can only be changed inside that class and cannot be modified by any external classes.
 
